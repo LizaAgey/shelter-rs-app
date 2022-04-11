@@ -1,0 +1,642 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+//=== Mixin ===
+
+//Arial font
+@mixin poppins {
+    font-family: 'Poppins', sans-serif;
+}
+
+//Georgia font
+@mixin tinos {
+    font-family: 'Tinos', serif;
+}
+
+@mixin h2 {
+    @include tinos;
+    font-style: $fs-normal;
+    font-weight: $fw-regular;
+    font-size: 44px;
+    line-height: 130%;
+}
+
+@mixin h3 {
+    @include tinos;
+    font-style: $fs-normal;
+    font-weight: $fw-regular;
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+}
+
+@mixin h3-mobile {
+    @include tinos;
+    font-style: $fs-normal;
+    font-weight: $fw-regular;
+    font-size: 25px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+}
+
+@mixin h4 {
+    @include tinos;
+    font-style: $fs-normal;
+    font-weight: $fw-regular;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+}
+
+@mixin h5 {
+    @include tinos;
+    font-style: $fs-normal;
+    font-weight: $fw-regular;
+    font-size: 15px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+}
+
+@mixin h5-modal-window {
+    @include tinos;
+    font-style: $fs-normal;
+    font-weight: $fw-bold;
+    font-size: 15px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+}
+
+@mixin paragraph-l {
+    @include poppins;
+    font-style: $fs-normal;
+    font-weight: $fw-regular;
+    font-size: 15px;
+    line-height: 160%;
+}
+
+@mixin paragraph-s {
+    @include poppins;
+    font-style: $fs-italic;
+    font-weight: $fw-italic;
+    font-size: 12px;
+    line-height: 150%;
+}
+
+@mixin paragraph-mobile-menu {
+    @include poppins;
+    font-style: $fs-normal;
+    font-weight: $fw-regular;
+    font-size: 32px;
+    line-height: 160%;
+}
+
+@mixin logo-title {
+    @include tinos;
+    font-style: $fs-normal;
+    font-weight: $fw-regular;
+    font-size: 32px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+}
+
+@mixin logo-subtitle {
+    @include poppins;
+    font-style: $fs-normal;
+    font-weight: $fw-regular;
+    font-size: 13px;
+    line-height: 15px;
+    letter-spacing: 0.01em;
+}
+
+@mixin button-primary {
+    @include tinos;
+    background-color: $color-primary;
+
+    padding: 15px 45px;
+    margin: 0;
+
+    height: 52px;
+    box-sizing: border-box;
+
+    border-radius: 100px;
+    border: none;
+
+    font-weight: $fw-regular;
+    font-style: $fs-normal;
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+
+    color: $color-dark-3xl;
+
+}
+
+@mixin button-primary-hover {
+    &:hover {
+        background-color: $color-primary-light;
+        transition: $transition;
+        cursor: pointer;
+    }
+}
+
+@mixin button-secondary {
+    @include tinos;
+
+    padding: 15px 45px;
+    margin: 0;
+
+    box-sizing: border-box;
+    height: 52px;
+
+    border-radius: 100px;
+    border: none;
+    border: 2px solid $color-primary;
+
+    font-weight: $fw-regular;
+    font-style: $fs-normal;
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+
+    color: $color-dark-3xl;
+    background-color: $color-light-xl;
+
+}
+
+@mixin button-secondary-hover {
+    &:hover {
+        background-color: $color-primary-light;
+        border: 2px solid $color-primary-light;
+        transition: $transition;
+        cursor: pointer;
+    }
+}
+
+
+//=== Variables ===
+$fw-regular: 400;
+$fw-italic: 400;
+$fw-bold: 700;
+
+$fs-normal: normal;
+$fs-italic: italic;
+
+
+$base: 4px;
+$padding-vertical-top: $base * 20;
+$padding-vertical-bottom: $base * 25;
+
+$bg-color-dark: url(noise_lines_transparent@2X.png),
+radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%)
+/* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+,
+#211F20;
+$color-light-s: #FAFAFA;
+$color-light-l: #F6F6F6;
+$color-light-xl: #FFFFFF;
+$color-dark-s: #CDCDCD;
+$color-dark-m: #B2B2B2;
+$color-dark-l: #545454;
+$color-dark-xl: #4C4C4C;
+$color-dark-2xl: #444444;
+$color-dark-3xl: #000000;
+$color-primary: #F1CDB3;
+$color-primary-light: #FDDCC4;
+
+$transition: .2s;
+
+
+
+//=== Common ===
+
+body {
+    @include poppins;
+
+}
+
+.wrapper-outer {}
+
+.wrapper-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: $padding-vertical-top;
+    padding-bottom: $padding-vertical-bottom;
+}
+
+a {
+    text-decoration: none;
+   
+}
+
+.right-title {
+    @include h3;
+    color: $color-dark-l;
+    margin: 0;
+}
+
+.right-paragraph {
+    @include paragraph-l;
+    color: $color-dark-xl;
+}
+
+.middle-title {
+    @include h3;
+    color: $color-dark-l;
+    margin-bottom: $base * 15;
+    text-align: center;
+}
+
+
+// === 1 - START SCREEN ===
+.section-introduction {
+    background: $bg-color-dark;
+
+    .wrapper-inner {
+        padding-top: $base * 15;
+        padding-bottom: 0;
+        display: flex;
+        flex-direction: column;
+
+    }
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    cursor: pointer;
+}
+
+.title {
+    @include logo-title;
+    color: $color-primary;
+    margin: 0 0 10px 0;
+}
+
+.subtitle {
+    @include logo-subtitle;
+    color: $color-light-xl;
+}
+
+.nav-wrapper {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    &__item {
+        &+& {
+            margin-left: $base * 9;
+        }
+
+        &-link {
+            @include paragraph-l;
+            color: $color-dark-s;
+            text-decoration: none;
+            transition: $transition;
+
+            &--active {
+                @include paragraph-l;
+                color: $color-light-s;
+            }
+
+
+            &:hover {
+                cursor: pointer;
+                color: $color-light-s;
+            }
+        }
+    }
+}
+
+.border-active {
+    width: $base * 32;
+    height: $base;
+    background-color: $color-primary;
+}
+
+.wrapper-start-screen {
+    display: flex;
+    justify-content: space-between;
+    margin-top: $base * 15;
+}
+
+.start-screen-content {
+    margin-top: $base * 41;
+}
+
+.start-screen-img-item {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.start-screen-title {
+    @include tinos;
+    @include h2;
+    color: $color-light-xl;
+    width: $base * 77;
+    height: $base * 28;
+    margin: 0;
+}
+
+.start-screen-text {
+    @include poppins;
+    @include paragraph-l;
+    color: $color-dark-s;
+    width: $base * 112;
+    height: $base * 18;
+    margin: $base * 10 0;
+    // margin-bottom: 
+}
+
+.button-primary {
+    @include button-primary;
+    @include button-primary-hover;
+}
+
+
+// === 2 - ABOUT ===
+.section-about {
+    background: $color-light-xl;
+
+    .wrapper-inner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    img {
+        margin-right: $base * 31;
+    }
+
+    .right-description {
+        width: $base * 107;
+        height: $base * 95;
+    }
+}
+
+
+
+// === 3 - SLIDER ===
+.section-slider {
+    background: $color-light-l;
+
+    .wrapper-inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.button-secondary {
+    @include button-secondary;
+    @include button-secondary-hover;
+}
+
+.slider-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: $base * 15;
+}
+
+.pet-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $color-light-s;
+
+    border-radius: 9px;
+    overflow: hidden;
+
+    padding-bottom: $base * 7;
+
+    &__item {
+        &+& {
+            margin-left: $base * 22;
+        }
+
+        &:hover {
+            transition: $transition;
+            cursor: pointer;
+            background-color: $color-dark-s;
+        }
+    }
+}
+
+.pet-name {
+    @include h4;
+    color: $color-dark-l;
+    padding: 30px 0;
+}
+
+.arrow-slider {
+    border: 2px solid $color-primary;
+    box-sizing: border-box;
+    border-radius: 100px;
+
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 $base * 13;
+
+    path {
+        fill: $color-dark-3xl;
+        
+    }
+
+    &:hover {
+        border-color: $color-primary-light;
+        background-color: $color-primary-light;
+        transition: $transition;
+    }
+}
+
+// === 4 - HELP ===
+.section-help {
+    background: $color-light-xl;
+
+    .wrapper-inner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+.help-list-wrapper {
+    display: flex;
+    width: $base * 256;
+    flex-wrap: wrap;
+}
+
+.help-icon {
+    path {
+        fill: $color-primary;
+    }
+
+    height: $base * 15;
+}
+
+.help-description {
+    @include h4;
+    color: $color-dark-l;
+}
+
+.help-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__item {
+        &+& {
+            margin-left: $base * 30;
+        }
+    }
+}
+
+
+
+// === 5 - DONATION ===
+.section-donation {
+    background: $color-light-l;
+
+    .wrapper-inner {
+        display: flex;
+
+
+        img {
+            margin-left: $base * 46;
+            margin-right: $base * 7;
+        }
+    }
+}
+
+.right-subtitle {
+    @include h5;
+    color: $color-dark-l;
+    margin-top: $base * 5;
+    margin-bottom: $base * 4;
+
+}
+
+.legal-information {
+    @include poppins;
+    font-weight: $fw-regular;
+    font-style: $fs-italic;
+    font-size: 12px;
+    line-height: 18px;
+    color: $color-dark-m;
+
+    width: $base * 95;
+
+    margin-top: $base * 5;
+
+}
+
+.credit-card-wrapper {
+    display: flex;
+    align-items: center;
+    background-color: $color-primary;
+    border-radius: 9px;
+
+    width: $base * 80;
+    height: $base * 11;
+
+    path {
+        fill: $color-dark-3xl;
+    }
+
+}
+
+.card-number {
+    @include h4;
+    padding-left: 15px;
+    
+    a {
+    color: $color-dark-l;
+    }
+}
+
+.donation-icon {
+    padding-left: 15px;
+}
+
+
+
+
+// === 6 - FOOTER ===
+.section-footer {
+    background: $bg-color-dark;
+
+    .wrapper-inner {
+        padding-top: $base * 10;
+        padding-bottom: 0;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    img {
+        display: block;
+    }
+}
+
+.info-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.contacts-wrapper {
+    margin-bottom: $base * 15;
+}
+
+path {
+    fill: $color-primary;
+    transition: $transition;
+}
+
+.footer-title {
+    @include h3;
+    color: $color-light-xl;
+    width: $base * 70;
+    height: $base * 22;
+    margin-top: $base * 14;
+    margin-bottom: $base * 10;
+    margin-left: $base * 10;
+}
+
+.footer-details {
+    display: flex;
+    margin-left: $base * 10;
+    margin-top: $base * 10;
+    height: $base * 8;
+
+}
+
+.footer-text {
+    @include h4;
+    text-decoration: none;
+    margin-left: $base * 5;
+    width: $base * 65;
+
+    a {
+        color: $color-primary;
+    }
+}
+
+
+.footer-puppy {
+    display: flex;
+    margin-left: $base * 40;
+
+}
