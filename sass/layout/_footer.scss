@@ -7,6 +7,10 @@
         padding-bottom: 0;
         display: flex;
         justify-content: space-between;
+        @media screen and (max-width: $middle-screen-max) and (min-width:$middle-screen-min) {
+            flex-direction: column;
+            align-items: center;
+        }
     }
 
     img {
@@ -19,6 +23,7 @@
     display: flex;
     justify-content: space-between;
     flex-grow: 1;
+    height: 290px;
 }
 
 .contacts-wrapper {
@@ -37,6 +42,10 @@ path {
     height: $base * 22;
     margin-top: $base * 14;
     margin-bottom: $base * 10;
+
+    @media screen and (max-width: $middle-screen-max) and (min-width:$middle-screen-min) {
+        margin-top: 32px;
+    }
 }
 
 .footer-details {
@@ -61,5 +70,9 @@ path {
 .footer-puppy {
     display: flex;
     margin-left: $base * 40;
+    @media screen and (max-width: $middle-screen-max) and (min-width:$middle-screen-min) {
+        margin-left: 0;
+
+    }
 
 }

@@ -19,23 +19,52 @@ body {
 
 .wrapper-inner {
     max-width: 1200px;
+
+    @media screen and (max-width: $middle-screen-max) and (min-width:$middle-screen-min) {
+        max-width: 708px;
+        padding-bottom: $padding-vertical-bottom - $base;
+        flex-direction: column;
+
+        .first-flex {
+            order: 2;
+        }
+
+        .second-flex {
+            order: 1;
+        }
+
+    }
+
     margin: 0 auto;
     padding-top: $padding-vertical-top;
     padding-bottom: $padding-vertical-bottom;
 }
 
 a {
-    text-decoration: none;   
+    text-decoration: none;
 }
+
 .right-title {
     @include h3;
     color: $color-dark-l;
     margin: 0;
+
 }
 
 .right-paragraph {
     @include paragraph-l;
     color: $color-dark-xl;
+
+    @media screen and (max-width: $middle-screen-max) and (min-width:$middle-screen-min) {
+        padding-top: 10px;
+    }
+}
+
+@media screen and (max-width: $middle-screen-max) and (min-width:$middle-screen-min) {
+    .left-img {
+        margin-top: 80px;
+        margin-left: 120px;
+    }
 }
 
 .middle-title {
@@ -50,7 +79,7 @@ a {
     background: $bg-color-dark;
 
     .wrapper-inner {
-        padding-top: $base * 15;
+        padding-top: $base * 7.5;
         padding-bottom: 0;
         display: flex;
         flex-direction: column;
@@ -120,16 +149,32 @@ header {
     display: flex;
     justify-content: space-between;
     margin-top: $base * 15;
+
+    @media screen and (max-width: $middle-screen-max) and (min-width:$middle-screen-min) {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 .start-screen-content {
     margin-top: $base * 41;
+
+    @media screen and (max-width: $middle-screen-max) and (min-width:$middle-screen-min) {
+        margin-top: 0;
+    }
 }
 
 .start-screen-img-item {
     display: block;
     margin: 0;
     padding: 0;
+
+    @media screen and (max-width: $middle-screen-max) and (min-width:$middle-screen-min) {
+        height: 593px;
+        width: 569px;
+        margin-left: 139px;
+    }
+
 }
 
 .start-screen-title {
@@ -156,7 +201,14 @@ header {
 .button-primary {
     @include button-primary;
     @include button-primary-hover;
+
+    @media screen and (max-width: $middle-screen-max) and (min-width:$middle-screen-min) {
+        margin-left: $base * 31;
+        margin-top: $base;
+        margin-bottom: $base * 25;
+    }
 }
+
 
 
 // === 2 - ABOUT ===
@@ -167,6 +219,8 @@ header {
         display: flex;
         justify-content: center;
         align-items: center;
+
+
     }
 
     img {
@@ -190,6 +244,8 @@ header {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        padding-bottom: 100px;
+
     }
 }
 
@@ -218,12 +274,17 @@ header {
     &__item {
         &+& {
             margin-left: $base * 22;
+
+            @media screen and (max-width: $middle-screen-max) and (min-width:$middle-screen-min) {
+                margin-left: 40px;
+            }
         }
 
         &:hover {
             transition: $transition;
             cursor: pointer;
             background-color: $color-dark-s;
+
             .button-secondary {
                 background-color: $color-primary-light;
                 border-color: $color-primary-light;
@@ -233,10 +294,16 @@ header {
     }
 }
 
+.invisible-middle-screen {
+    @media screen and (max-width: $middle-screen-max) and (min-width:$middle-screen-min) {
+        display: none;
+    }
+}
+
 .pet-name {
     @include h4;
     color: $color-dark-l;
-    padding: 30px 0;
+    padding: 28px 0;
 }
 
 .arrow-slider {
@@ -253,15 +320,27 @@ header {
 
     margin: 0 $base * 13;
 
+    @media screen and (max-width: $middle-screen-max) and (min-width:$middle-screen-min) {
+        margin: 0 12px;
+    }
+
     path {
         fill: $color-dark-3xl;
-        
+
     }
 
     &:hover {
         border-color: $color-primary-light;
         background-color: $color-primary-light;
         transition: $transition;
+    }
+}
+
+#our-friends-section {
+    .button-primary {
+        @media screen and (max-width: $middle-screen-max) and (min-width:$middle-screen-min) {
+            margin: 0;
+        }
     }
 }
 
@@ -274,14 +353,21 @@ header {
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        padding-bottom: 35px
+
+        padding-bottom: 35px;
+        
     }
 }
+
 
 .help-list-wrapper {
     display: flex;
     width: $base * 259;
     flex-wrap: wrap;
+
+    @media screen and (max-width: $middle-screen-max) and (min-width:$middle-screen-min) {
+        width: 630px;
+    }
 }
 
 .help-icon {
@@ -304,14 +390,39 @@ header {
 
     &__item {
         margin-bottom: $base * 10;
+
         &+& {
             margin-left: $base * 30;
+
+            @media screen and (max-width: $middle-screen-max) and (min-width:$middle-screen-min) {
+                margin-left: $base * 15;
+            }
         }
+
         &:nth-child(6n) {
             margin-left: $base * 24;
+
+            @media screen and (max-width: $middle-screen-max) and (min-width:$middle-screen-min) {
+                margin-left: $base * 15;
+            }
+        }
+
+        @media screen and (max-width: $middle-screen-max) and (min-width:$middle-screen-min) {
+            width: 170px;
+            height: 113px;
+            margin-bottom: $base * 15;
+
+            &:nth-child(4) {
+                margin-left: 0;
+            }
+
+            &:nth-child(7) {
+                margin-left: 0;
+            }
         }
     }
 }
+
 
 
 
@@ -322,13 +433,22 @@ header {
     .wrapper-inner {
         display: flex;
 
-
         img {
             margin: $base*2.5 $base*7 0 $base*37;
-            // margin-top: $base * 2.5;
-            // margin-left: $base * 38;
-            // margin-right: $base * 7;
+            
         }
+
+        @media screen and (max-width: $middle-screen-max) and (min-width:$middle-screen-min) {
+            align-items: center;
+            .left-img {
+                margin-left: 0;
+                margin-top: 55px;
+                img {
+                    margin: 0;
+                }
+            }
+        }
+
     }
 }
 
@@ -371,13 +491,12 @@ header {
 .card-number {
     @include h4;
     padding-left: 15px;
-    
+
     a {
-    color: $color-dark-l;
+        color: $color-dark-l;
     }
 }
 
 .donation-icon {
     padding-left: 15px;
 }
-
