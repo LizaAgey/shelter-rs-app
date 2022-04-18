@@ -2,14 +2,15 @@
     font-family: 'GeorgiaRegular', serif;
     font-size: 44px;
     line-height: 130%;
-    letter-spacing: 0.03em
+    letter-spacing: 0.035em;
+
 }
 
 @mixin h3 {
     font-family: 'GeorgiaRegular', serif;
     font-size: 40px;
     line-height: 115%;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.01em;
 }
 
 @mixin h3-mobile {
@@ -44,6 +45,7 @@
     font-family: 'ArialRegular', sans-serif;
     font-size: 15px;
     line-height: 160%;
+
 }
 
 @mixin paragraph-s {

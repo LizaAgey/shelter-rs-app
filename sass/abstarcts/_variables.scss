@@ -18,3 +18,11 @@ $color-primary-light: #FDDCC4;
 
 $transition: 0.2s;
 
+
+//breakpoints
+$middle-screen-min: 768px;
+$middle-screen-max: 1279px;
+
+$small-screen-min: 320px;
+$small-screen-max: $middle-screen-min - 1;
+
