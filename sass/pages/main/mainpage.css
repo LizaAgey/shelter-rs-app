@@ -230,7 +230,7 @@ a {
 }
 
 .section-introduction .wrapper-inner {
-  padding-top: 30px;
+  padding-top: 60px;
   padding-bottom: 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -239,6 +239,12 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+@media screen and (max-width: 1279px) and (min-width: 768px) {
+  .section-introduction .wrapper-inner {
+    padding-top: 30px;
+  }
 }
 
 header {
