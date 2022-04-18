@@ -1,0 +1,219 @@
+@import '../../abstarcts/mixins';
+@import '../../abstarcts/variables';
+@import '../../base/fonts';
+@import '../../base/reset';
+@import '../../base/textstyles';
+@import '../../components/buttons';
+@import '../../layout/footer';
+@import '../../layout/header';
+
+//COMMON STYLES
+body {
+    font-family: 'ArialRegular', sans-serif;
+    @include text-regular;
+}
+
+.wrapper-outer {}
+
+.wrapper-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: $padding-vertical-top;
+    padding-bottom: $padding-vertical-bottom;
+}
+
+a {
+    text-decoration: none;
+}
+
+// === 1 - START SCREEN ===
+.section-introduction {
+    position: sticky;
+    top: 0px;
+
+    background: $color-light-xl;
+
+    .wrapper-inner {
+        padding: $base * 7 0;
+        display: flex;
+        flex-direction: column;
+
+    }
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    cursor: pointer;
+}
+
+.title {
+    @include logo-title;
+    color: $color-dark-l;
+    margin: 0 0 10px 0;
+}
+
+.subtitle {
+    @include logo-subtitle;
+    color: $color-dark-3xl;
+}
+
+.nav-wrapper {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    &__item {
+        &+& {
+            margin-left: $base * 9;
+        }
+
+        &-link {
+            @include paragraph-l;
+            color: $color-dark-l;
+            text-decoration: none;
+            transition: $transition;
+
+            &--active {
+                @include paragraph-l;
+                color: $color-dark-3xl;
+            }
+
+            &:hover {
+                cursor: pointer;
+                color: $color-dark-3xl;
+            }
+        }
+    }
+}
+
+.border-active {
+    width: $base * 14;
+    height: $base;
+    background-color: $color-primary;
+}
+
+
+// === 2 - SLIDER ===
+.section-slider {
+    background: $color-light-l;
+
+    .wrapper-inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 80px;
+    }
+}
+
+.middle-title {
+    @include h3;
+    color: $color-dark-l;
+    margin-bottom: $base * 15;
+    margin-left: $base * 10;
+    text-align: center;
+}
+
+.button-secondary {
+    @include button-secondary;
+    @include button-secondary-hover;
+}
+
+.slider-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: $base * 4;
+    margin-left: $base * 10;
+    width: 1200px;
+}
+
+.pet-wrapper {
+    width: $base *67.5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $color-light-s;
+
+    border-radius: 9px;
+    overflow: hidden;
+
+    padding-bottom: $base * 7;
+    margin-bottom: $base * 7.5;
+
+    &:hover {
+        transition: $transition;
+        cursor: pointer;
+        background-color: $color-dark-s;
+        .button-secondary {
+            background-color: $color-primary-light;
+            border-color: $color-primary-light;
+            transition: $transition;
+        }
+    }
+
+    &__item {
+        &+& {
+            margin-left: $base * 10;
+        }
+        &:nth-child(5n) {
+            margin-left: 0;
+        }
+    }
+}
+
+.pet-name {
+    @include h4;
+    color: $color-dark-l;
+    padding: 30px 0;
+}
+
+.pagination-list {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.pagination-list__item {
+    @include h4 border-radius: 100px;
+    border: 2px solid $color-primary;
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.disabled-pagination {
+    border: 2px solid $color-dark-s;
+
+    path {
+        fill: $color-dark-s;
+    }
+
+}
+
+.center-pagination {
+    background-color: $color-primary;
+    border-color: $color-primary;
+}
+
+.enabled-pagination {
+    path {
+        fill: $color-dark-3xl;
+        
+    }
+
+    &:hover {
+        cursor: pointer;
+        background-color: $color-primary;
+    }
+
+}

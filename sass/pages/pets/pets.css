@@ -1,7 +1,132 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital@0;1&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@font-face {
+  font-family: "ArialRegular";
+  src: url("../../assets/fonts/ArialRegular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "ArialBold";
+  src: url("../../assets/fonts/ArialBold.ttg") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "ArialItalic";
+  src: url("../../assets/fonts/ArialItalic.ttg") format("truetype");
+  font-style: italic;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "GeorgiaRegular";
+  src: url("../../assets/fonts/GeorgiaRegular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "GeorgiaBold";
+  src: url("../../assets/fonts/GeorgiaBold.ttg") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "GeorgiaItalic";
+  src: url("../../assets/fonts/GeorgiaItalic.ttg") format("truetype");
+  font-style: italic;
+  font-weight: 400;
+}
+
+.section-footer {
+  background: url(noise_lines_transparent@2X.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
+}
+
+.section-footer .wrapper-inner {
+  padding-top: 0;
+  padding-bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.section-footer img {
+  display: block;
+  margin-top: 40px;
+}
+
+.info-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.contacts-wrapper {
+  margin-bottom: 60px;
+}
+
+path {
+  fill: #F1CDB3;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.footer-title {
+  font-family: 'GeorgiaRegular', serif;
+  font-size: 40px;
+  line-height: 115%;
+  letter-spacing: 0.03em;
+  color: #FFFFFF;
+  width: 280px;
+  height: 88px;
+  margin-top: 56px;
+  margin-bottom: 40px;
+}
+
+.footer-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 40px;
+  height: 32px;
+}
+
+.footer-text {
+  font-family: 'GeorgiaRegular', serif;
+  font-size: 22px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  margin-left: 20px;
+  width: 260px;
+}
+
+.footer-text a {
+  color: #F1CDB3;
+}
+
+.footer-puppy {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 160px;
+}
+
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'ArialRegular', sans-serif;
+  font-style: normal;
+  font-weight: 400;
 }
 
 .wrapper-inner {
@@ -50,10 +175,10 @@ header {
 }
 
 .title {
-  font-family: 'Tinos', serif;
+  font-family: 'GeorgiaRegular', serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 32px;
+  font-size: 34px;
   line-height: 110%;
   letter-spacing: 0.06em;
   color: #545454;
@@ -61,12 +186,12 @@ header {
 }
 
 .subtitle {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'ArialRegular', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 13px;
   line-height: 15px;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.1em;
   color: #000000;
 }
 
@@ -84,9 +209,7 @@ header {
 }
 
 .nav-wrapper__item-link {
-  font-family: 'Poppins', sans-serif;
-  font-style: normal;
-  font-weight: 400;
+  font-family: 'ArialRegular', sans-serif;
   font-size: 15px;
   line-height: 160%;
   color: #545454;
@@ -96,9 +219,7 @@ header {
 }
 
 .nav-wrapper__item-link--active {
-  font-family: 'Poppins', sans-serif;
-  font-style: normal;
-  font-weight: 400;
+  font-family: 'ArialRegular', sans-serif;
   font-size: 15px;
   line-height: 160%;
   color: #000000;
@@ -110,7 +231,7 @@ header {
 }
 
 .border-active {
-  width: 68px;
+  width: 56px;
   height: 4px;
   background-color: #F1CDB3;
 }
@@ -133,22 +254,25 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding-bottom: 80px;
 }
 
 .middle-title {
-  font-family: 'Tinos', serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 35px;
-  line-height: 130%;
-  letter-spacing: 0.06em;
+  font-family: 'GeorgiaRegular', serif;
+  font-size: 40px;
+  line-height: 115%;
+  letter-spacing: 0.03em;
   color: #545454;
   margin-bottom: 60px;
+  margin-left: 40px;
   text-align: center;
 }
 
 .button-secondary {
-  font-family: 'Tinos', serif;
+  font-family: 'GeorgiaRegular';
+  font-size: 17px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
   padding: 15px 45px;
   margin: 0;
   -webkit-box-sizing: border-box;
@@ -157,11 +281,6 @@ header {
   border-radius: 100px;
   border: none;
   border: 2px solid #F1CDB3;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 17px;
-  line-height: 130%;
-  letter-spacing: 0.06em;
   color: #000000;
   background-color: #FFFFFF;
 }
@@ -183,11 +302,13 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 60px;
-  gap: 36px;
+  margin-bottom: 16px;
+  margin-left: 40px;
+  width: 1200px;
 }
 
 .pet-wrapper {
+  width: 270px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -202,6 +323,7 @@ header {
   border-radius: 9px;
   overflow: hidden;
   padding-bottom: 28px;
+  margin-bottom: 30px;
 }
 
 .pet-wrapper:hover {
@@ -211,11 +333,24 @@ header {
   background-color: #CDCDCD;
 }
 
+.pet-wrapper:hover .button-secondary {
+  background-color: #FDDCC4;
+  border-color: #FDDCC4;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.pet-wrapper__item + .pet-wrapper__item {
+  margin-left: 40px;
+}
+
+.pet-wrapper__item:nth-child(5n) {
+  margin-left: 0;
+}
+
 .pet-name {
-  font-family: 'Tinos', serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
+  font-family: 'GeorgiaRegular', serif;
+  font-size: 22px;
   line-height: 115%;
   letter-spacing: 0.06em;
   color: #545454;
@@ -231,10 +366,8 @@ header {
 }
 
 .pagination-list__item {
-  font-family: 'Tinos', serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
+  font-family: 'GeorgiaRegular', serif;
+  font-size: 22px;
   line-height: 115%;
   letter-spacing: 0.06em;
   border-radius: 100px;
@@ -260,8 +393,9 @@ header {
   fill: #CDCDCD;
 }
 
-.disabled-pagination:hover {
-  cursor: pointer;
+.center-pagination {
+  background-color: #F1CDB3;
+  border-color: #F1CDB3;
 }
 
 .enabled-pagination path {
@@ -272,92 +406,4 @@ header {
   cursor: pointer;
   background-color: #F1CDB3;
 }
-
-.section-footer {
-  background: url(noise_lines_transparent@2X.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
-}
-
-.section-footer .wrapper-inner {
-  padding-top: 40px;
-  padding-bottom: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.section-footer img {
-  display: block;
-}
-
-.info-wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-}
-
-.contacts-wrapper {
-  margin-bottom: 60px;
-}
-
-path {
-  fill: #F1CDB3;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-}
-
-.footer-title {
-  font-family: 'Tinos', serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 35px;
-  line-height: 130%;
-  letter-spacing: 0.06em;
-  color: #FFFFFF;
-  width: 280px;
-  height: 88px;
-  margin-top: 56px;
-  margin-bottom: 40px;
-  margin-left: 40px;
-}
-
-.footer-details {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-left: 40px;
-  margin-top: 40px;
-  height: 32px;
-}
-
-.footer-text {
-  font-family: 'Tinos', serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 115%;
-  letter-spacing: 0.06em;
-  text-decoration: none;
-  margin-left: 20px;
-  width: 260px;
-}
-
-.footer-text a {
-  color: #F1CDB3;
-}
-
-.footer-puppy {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-left: 160px;
-}
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=pets.css.map */

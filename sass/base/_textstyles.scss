@@ -1,0 +1,77 @@
+@mixin h2 {
+    font-family: 'GeorgiaRegular', serif;
+    font-size: 44px;
+    line-height: 130%;
+    letter-spacing: 0.03em
+}
+
+@mixin h3 {
+    font-family: 'GeorgiaRegular', serif;
+    font-size: 40px;
+    line-height: 115%;
+    letter-spacing: 0.03em;
+}
+
+@mixin h3-mobile {
+    font-family: 'GeorgiaRegular', serif;
+    font-size: 40px;
+    line-height: 115%;
+    letter-spacing: 0.03em;
+}
+
+@mixin h4 {
+    font-family: 'GeorgiaRegular', serif;
+    font-size: 22px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+}
+
+@mixin h5 {
+    font-family: 'GeorgiaRegular', serif;
+    font-size: 15px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+}
+
+@mixin h5-modal-window {
+    font-family: 'GeorgiaBold', serif;
+    font-size: 15px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+}
+
+@mixin paragraph-l {
+    font-family: 'ArialRegular', sans-serif;
+    font-size: 15px;
+    line-height: 160%;
+}
+
+@mixin paragraph-s {
+    font-family: 'ArialItalic', sans-serif;
+    @include text-italic;
+    font-size: 12px;
+    line-height: 150%;
+}
+
+@mixin paragraph-mobile-menu {
+    font-family: 'ArialRegular', sans-serif;
+    @include text-regular;
+    font-size: 32px;
+    line-height: 160%;
+}
+
+@mixin logo-title {
+    font-family: 'GeorgiaRegular', serif;
+    @include text-regular;
+    font-size: 34px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+}
+
+@mixin logo-subtitle {
+    font-family: 'ArialRegular', sans-serif;
+    @include text-regular;
+    font-size: 13px;
+    line-height: 15px;
+    letter-spacing: 0.1em
+}

@@ -1,0 +1,383 @@
+@import '../../abstarcts/mixins';
+@import '../../abstarcts/variables';
+@import '../../base/fonts';
+@import '../../base/reset';
+@import '../../base/textstyles';
+@import '../../components/buttons';
+@import '../../layout/footer';
+@import '../../layout/header';
+
+
+//COMMON STYLES
+
+body {
+    font-family: 'ArialRegular', sans-serif;
+    @include text-regular;
+}
+
+.wrapper-outer {}
+
+.wrapper-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: $padding-vertical-top;
+    padding-bottom: $padding-vertical-bottom;
+}
+
+a {
+    text-decoration: none;   
+}
+.right-title {
+    @include h3;
+    color: $color-dark-l;
+    margin: 0;
+}
+
+.right-paragraph {
+    @include paragraph-l;
+    color: $color-dark-xl;
+}
+
+.middle-title {
+    @include h3;
+    color: $color-dark-l;
+    margin-bottom: $base * 15;
+    text-align: center;
+}
+
+// === 1 - START SCREEN ===
+.section-introduction {
+    background: $bg-color-dark;
+
+    .wrapper-inner {
+        padding-top: $base * 15;
+        padding-bottom: 0;
+        display: flex;
+        flex-direction: column;
+
+    }
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    cursor: pointer;
+}
+
+.title {
+    @include logo-title;
+    color: $color-primary;
+    margin: 0 0 10px 0;
+}
+
+.subtitle {
+    @include logo-subtitle;
+    color: $color-light-xl;
+}
+
+.nav-wrapper {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    &__item {
+        &+& {
+            margin-left: $base * 9;
+        }
+
+        &-link {
+            @include paragraph-l;
+            color: $color-dark-s;
+            text-decoration: none;
+            transition: $transition;
+
+            &--active {
+                @include paragraph-l;
+                color: $color-light-s;
+            }
+
+
+            &:hover {
+                cursor: pointer;
+                color: $color-light-s;
+            }
+        }
+    }
+}
+
+.border-active {
+    width: $base * 29;
+    height: $base;
+    background-color: $color-primary;
+}
+
+.wrapper-start-screen {
+    display: flex;
+    justify-content: space-between;
+    margin-top: $base * 15;
+}
+
+.start-screen-content {
+    margin-top: $base * 41;
+}
+
+.start-screen-img-item {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.start-screen-title {
+    font-family: 'ArialRegular', serif;
+    @include text-regular;
+    @include h2;
+    color: $color-light-xl;
+    width: $base * 77;
+    height: $base * 28;
+    margin: 0;
+}
+
+.start-screen-text {
+    font-family: 'GeorgiaRegular', sans-serif;
+    @include text-regular;
+    @include paragraph-l;
+    color: $color-dark-s;
+    width: $base * 115;
+    height: $base * 18;
+    margin: $base * 10 0;
+    // margin-bottom: 
+}
+
+.button-primary {
+    @include button-primary;
+    @include button-primary-hover;
+}
+
+
+// === 2 - ABOUT ===
+.section-about {
+    background: $color-light-xl;
+
+    .wrapper-inner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    img {
+        margin-right: $base * 31;
+    }
+
+    .right-description {
+        width: $base * 107;
+        height: $base * 95;
+    }
+}
+
+
+
+// === 3 - SLIDER ===
+.section-slider {
+    background: $color-light-l;
+
+    .wrapper-inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.button-secondary {
+    @include button-secondary;
+    @include button-secondary-hover;
+}
+
+.slider-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: $base * 15;
+}
+
+.pet-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $color-light-s;
+
+    border-radius: 9px;
+    overflow: hidden;
+
+    padding-bottom: $base * 7;
+
+    &__item {
+        &+& {
+            margin-left: $base * 22;
+        }
+
+        &:hover {
+            transition: $transition;
+            cursor: pointer;
+            background-color: $color-dark-s;
+            .button-secondary {
+                background-color: $color-primary-light;
+                border-color: $color-primary-light;
+                transition: $transition;
+            }
+        }
+    }
+}
+
+.pet-name {
+    @include h4;
+    color: $color-dark-l;
+    padding: 30px 0;
+}
+
+.arrow-slider {
+    border: 2px solid $color-primary;
+    box-sizing: border-box;
+    border-radius: 100px;
+
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 $base * 13;
+
+    path {
+        fill: $color-dark-3xl;
+        
+    }
+
+    &:hover {
+        border-color: $color-primary-light;
+        background-color: $color-primary-light;
+        transition: $transition;
+    }
+}
+
+// === 4 - HELP ===
+.section-help {
+    background: $color-light-xl;
+
+    .wrapper-inner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding-bottom: 35px
+    }
+}
+
+.help-list-wrapper {
+    display: flex;
+    width: $base * 259;
+    flex-wrap: wrap;
+}
+
+.help-icon {
+    path {
+        fill: $color-primary;
+    }
+
+    height: $base * 15;
+}
+
+.help-description {
+    @include h4;
+    color: $color-dark-l;
+}
+
+.help-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__item {
+        margin-bottom: $base * 10;
+        &+& {
+            margin-left: $base * 30;
+        }
+        &:nth-child(6n) {
+            margin-left: $base * 24;
+        }
+    }
+}
+
+
+
+// === 5 - DONATION ===
+.section-donation {
+    background: $color-light-l;
+
+    .wrapper-inner {
+        display: flex;
+
+
+        img {
+            margin: $base*2.5 $base*7 0 $base*37;
+            // margin-top: $base * 2.5;
+            // margin-left: $base * 38;
+            // margin-right: $base * 7;
+        }
+    }
+}
+
+.right-subtitle {
+    @include h5;
+    color: $color-dark-l;
+    margin-top: $base * 5;
+    margin-bottom: $base * 4;
+
+}
+
+.legal-information {
+    font-family: 'GeorgiaRegular', sans-serif;
+    @include text-regular;
+    font-size: 12px;
+    line-height: 18px;
+    color: $color-dark-m;
+
+    width: $base * 95;
+
+    margin-top: $base * 5;
+
+}
+
+.credit-card-wrapper {
+    display: flex;
+    align-items: center;
+    background-color: $color-primary;
+    border-radius: 9px;
+
+    width: $base * 87.5;
+    height: $base * 11;
+
+    path {
+        fill: $color-dark-3xl;
+    }
+
+}
+
+.card-number {
+    @include h4;
+    padding-left: 15px;
+    
+    a {
+    color: $color-dark-l;
+    }
+}
+
+.donation-icon {
+    padding-left: 15px;
+}
+

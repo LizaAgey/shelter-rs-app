@@ -1,0 +1,14 @@
+@mixin text-regular {
+    font-style: normal;
+    font-weight: 400;    
+}
+
+@mixin text-bold {
+    font-style: normal;
+    font-weight: 700;    
+}
+
+@mixin text-italic {
+    font-style: italic;
+    font-weight: 400;    
+}

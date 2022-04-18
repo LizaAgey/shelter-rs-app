@@ -1,0 +1,65 @@
+// === FOOTER ===
+.section-footer {
+    background: $bg-color-dark;
+
+    .wrapper-inner {
+        padding-top: 0;
+        padding-bottom: 0;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    img {
+        display: block;
+        margin-top: 40px;
+    }
+}
+
+.info-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.contacts-wrapper {
+    margin-bottom: $base * 15;
+}
+
+path {
+    fill: $color-primary;
+    transition: $transition;
+}
+
+.footer-title {
+    @include h3;
+    color: $color-light-xl;
+    width: $base * 70;
+    height: $base * 22;
+    margin-top: $base * 14;
+    margin-bottom: $base * 10;
+}
+
+.footer-details {
+    display: flex;
+    margin-top: $base * 10;
+    height: $base * 8;
+
+}
+
+.footer-text {
+    @include h4;
+    text-decoration: none;
+    margin-left: $base * 5;
+    width: $base * 65;
+
+    a {
+        color: $color-primary;
+    }
+}
+
+
+.footer-puppy {
+    display: flex;
+    margin-left: $base * 40;
+
+}

@@ -1,0 +1,55 @@
+@mixin button-primary {
+    font-family: 'GeorgiaRegular';
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 0.08em;
+
+    background-color: $color-primary;
+    color: $color-dark-3xl;
+
+    padding: 15px 45px;
+    margin: 0;
+
+    height: 52px;
+
+    box-sizing: border-box;
+    border-radius: 100px;
+    border: none;
+}
+
+@mixin button-primary-hover {
+    &:hover {
+        background-color: $color-primary-light;
+        transition: $transition;
+        cursor: pointer;
+    }
+}
+
+@mixin button-secondary {
+    font-family: 'GeorgiaRegular';
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+
+    padding: 15px 45px;
+    margin: 0;
+
+    box-sizing: border-box;
+    height: 52px;
+
+    border-radius: 100px;
+    border: none;
+    border: 2px solid $color-primary;
+
+    color: $color-dark-3xl;
+    background-color: $color-light-xl;
+}
+
+@mixin button-secondary-hover {
+    &:hover {
+        background-color: $color-primary-light;
+        border: 2px solid $color-primary-light;
+        transition: $transition;
+        cursor: pointer;
+    }
+}

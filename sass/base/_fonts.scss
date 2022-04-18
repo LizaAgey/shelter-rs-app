@@ -1,0 +1,43 @@
+// === Arial ===
+@font-face {
+    font-family: "ArialRegular";
+    src: url("../../assets/fonts/ArialRegular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "ArialBold";
+    src: url("../../assets/fonts/ArialBold.ttg") format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "ArialItalic";
+    src: url("../../assets/fonts/ArialItalic.ttg") format("truetype");
+    font-style: italic;
+    font-weight: 400;
+}
+
+// === Georgia ===
+@font-face {
+    font-family: "GeorgiaRegular";
+    src: url("../../assets/fonts/GeorgiaRegular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "GeorgiaBold";
+    src: url("../../assets/fonts/GeorgiaBold.ttg") format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "GeorgiaItalic";
+    src: url("../../assets/fonts/GeorgiaItalic.ttg") format("truetype");
+    font-style: italic;
+    font-weight: 400;
+}
