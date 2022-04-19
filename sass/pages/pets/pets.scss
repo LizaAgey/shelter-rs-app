@@ -17,6 +17,12 @@ body {
 
 .wrapper-inner {
     max-width: 1200px;
+
+    @media screen and (max-width: $middle-screen-max) and (min-width:$middle-screen-min) {
+        max-width: 708px;
+        flex-direction: column;
+    }
+
     margin: 0 auto;
     padding-top: $padding-vertical-top;
     padding-bottom: $padding-vertical-bottom;
@@ -34,7 +40,8 @@ a {
     background: $color-light-xl;
 
     .wrapper-inner {
-        padding: $base * 7 0;
+        padding: $base * 7.5 0;
+
         display: flex;
         flex-direction: column;
 
@@ -108,7 +115,10 @@ header {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding-bottom: 80px;
+        padding-bottom: 90px;
+        @media screen and (max-width: $middle-screen-max) and (min-width:$middle-screen-min) {
+            padding-bottom: 65px
+        }
     }
 }
 
@@ -118,6 +128,13 @@ header {
     margin-bottom: $base * 15;
     margin-left: $base * 10;
     text-align: center;
+
+    @media screen and (max-width: $middle-screen-max) and (min-width:$middle-screen-min) {
+        margin-bottom: 30px;
+        margin-left: 0;
+        font-size: 35px;
+        letter-spacing: 0.09em;
+    }
 }
 
 .button-secondary {
@@ -129,9 +146,15 @@ header {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    margin-bottom: $base * 4;
     margin-left: $base * 10;
     width: 1200px;
+
+    @media screen and (max-width: $middle-screen-max) and (min-width:$middle-screen-min) {
+        width: 708px;
+
+        margin: 0 auto;
+        justify-content: center;
+    }
 }
 
 .pet-wrapper {
@@ -144,13 +167,15 @@ header {
     border-radius: 9px;
     overflow: hidden;
 
-    padding-bottom: $base * 7;
+    padding-bottom: $base * 7.5;
     margin-bottom: $base * 7.5;
+
 
     &:hover {
         transition: $transition;
         cursor: pointer;
         background-color: $color-dark-s;
+
         .button-secondary {
             background-color: $color-primary-light;
             border-color: $color-primary-light;
@@ -162,9 +187,23 @@ header {
         &+& {
             margin-left: $base * 10;
         }
+
         &:nth-child(5n) {
             margin-left: 0;
         }
+
+        @media screen and (max-width: $middle-screen-max) and (min-width:$middle-screen-min) {
+            &:nth-child(3) {
+                margin-left: 0;
+            }
+
+        }
+    }
+}
+
+.invisible-middle-screen {
+    @media screen and (max-width: $middle-screen-max) and (min-width:$middle-screen-min) {
+        display: none;
     }
 }
 
@@ -178,13 +217,19 @@ header {
     display: flex;
     gap: 20px;
     list-style: none;
+
+    @media screen and (max-width: $middle-screen-max) and (min-width:$middle-screen-min) {
+        padding-left: 0;
+        margin: 10px 0;
+
+    }
 }
 
 .pagination-list__item {
     @include h4 border-radius: 100px;
     border: 2px solid $color-primary;
-    width: 52px;
-    height: 52px;
+    width: 50px;
+    height: 50px;
 
     display: flex;
     align-items: center;
@@ -208,7 +253,7 @@ header {
 .enabled-pagination {
     path {
         fill: $color-dark-3xl;
-        
+
     }
 
     &:hover {

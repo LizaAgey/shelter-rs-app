@@ -161,6 +161,16 @@ body {
   padding-bottom: 100px;
 }
 
+@media screen and (max-width: 1279px) and (min-width: 768px) {
+  .wrapper-inner {
+    max-width: 708px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 a {
   text-decoration: none;
 }
@@ -173,7 +183,7 @@ a {
 }
 
 .section-introduction .wrapper-inner {
-  padding: 28px 0;
+  padding: 30px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -279,7 +289,13 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-bottom: 80px;
+  padding-bottom: 90px;
+}
+
+@media screen and (max-width: 1279px) and (min-width: 768px) {
+  .section-slider .wrapper-inner {
+    padding-bottom: 65px;
+  }
 }
 
 .middle-title {
@@ -291,6 +307,15 @@ header {
   margin-bottom: 60px;
   margin-left: 40px;
   text-align: center;
+}
+
+@media screen and (max-width: 1279px) and (min-width: 768px) {
+  .middle-title {
+    margin-bottom: 30px;
+    margin-left: 0;
+    font-size: 35px;
+    letter-spacing: 0.09em;
+  }
 }
 
 .button-secondary {
@@ -327,9 +352,18 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 16px;
   margin-left: 40px;
   width: 1200px;
+}
+
+@media screen and (max-width: 1279px) and (min-width: 768px) {
+  .slider-wrapper {
+    width: 708px;
+    margin: 0 auto;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
 .pet-wrapper {
@@ -347,7 +381,7 @@ header {
   background-color: #FAFAFA;
   border-radius: 9px;
   overflow: hidden;
-  padding-bottom: 28px;
+  padding-bottom: 30px;
   margin-bottom: 30px;
 }
 
@@ -373,6 +407,18 @@ header {
   margin-left: 0;
 }
 
+@media screen and (max-width: 1279px) and (min-width: 768px) {
+  .pet-wrapper__item:nth-child(3) {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 1279px) and (min-width: 768px) {
+  .invisible-middle-screen {
+    display: none;
+  }
+}
+
 .pet-name {
   font-family: 'GeorgiaRegular', serif;
   font-size: 22px;
@@ -390,6 +436,13 @@ header {
   list-style: none;
 }
 
+@media screen and (max-width: 1279px) and (min-width: 768px) {
+  .pagination-list {
+    padding-left: 0;
+    margin: 10px 0;
+  }
+}
+
 .pagination-list__item {
   font-family: 'GeorgiaRegular', serif;
   font-size: 22px;
@@ -397,8 +450,8 @@ header {
   letter-spacing: 0.06em;
   border-radius: 100px;
   border: 2px solid #F1CDB3;
-  width: 52px;
-  height: 52px;
+  width: 50px;
+  height: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
