@@ -35,6 +35,20 @@ body {
 
     }
 
+    @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
+        max-width: 300px;
+        flex-direction: column;
+
+        .first-flex {
+            order: 2;
+        }
+
+        .second-flex {
+            order: 1;
+        }
+
+    }
+
     margin: 0 auto;
     padding-top: $padding-vertical-top;
     padding-bottom: $padding-vertical-bottom;
@@ -49,6 +63,12 @@ a {
     color: $color-dark-l;
     margin: 0;
 
+    @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
+        @include h3-mobile;
+        width: 270px;
+        text-align: center;
+    }
+
 }
 
 .right-paragraph {
@@ -58,12 +78,22 @@ a {
     @media screen and (max-width: $middle-screen-max) and (min-width:$middle-screen-min) {
         padding-top: 10px;
     }
+
+    @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
+        text-align: justify;
+        margin-bottom: 42px;
+    }
 }
 
-@media screen and (max-width: $middle-screen-max) and (min-width:$middle-screen-min) {
-    .left-img {
+.left-img {
+    @media screen and (max-width: $middle-screen-max) and (min-width:$middle-screen-min) {
+
         margin-top: 80px;
         margin-left: 120px;
+    }
+
+    @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
+        margin-top: 150px;
     }
 }
 
@@ -72,6 +102,11 @@ a {
     color: $color-dark-l;
     margin-bottom: $base * 15;
     text-align: center;
+
+    @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
+        @include h3-mobile;
+        margin-bottom: 42px;
+    }
 }
 
 // === 1 - START SCREEN ===
@@ -82,6 +117,10 @@ a {
         padding-top: $base * 15;
 
         @media screen and (max-width: $middle-screen-max) and (min-width:$middle-screen-min) {
+            padding-top: $base * 7.5;
+        }
+
+        @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
             padding-top: $base * 7.5;
         }
 
@@ -96,6 +135,10 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
+        width: 257px;
+    }
 }
 
 .logo {
@@ -142,12 +185,22 @@ header {
             }
         }
     }
+
+    @media screen and (max-width:$small-screen-max) {
+        display: none;
+    }
 }
 
 .border-active {
     width: $base * 29;
     height: $base;
     background-color: $color-primary;
+}
+
+.burger {
+    @media screen and (min-width: $middle-screen-min) {
+        display: none;
+    }
 }
 
 .wrapper-start-screen {
@@ -159,12 +212,22 @@ header {
         flex-direction: column;
         align-items: center;
     }
+
+    @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 .start-screen-content {
     margin-top: $base * 41;
 
     @media screen and (max-width: $middle-screen-max) and (min-width:$middle-screen-min) {
+        margin-top: 0;
+    }
+
+    @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
         margin-top: 0;
     }
 }
@@ -180,6 +243,11 @@ header {
         margin-left: 139px;
     }
 
+    @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
+        width: 260px;
+        margin-left: 40px;
+    }
+
 }
 
 .start-screen-title {
@@ -190,6 +258,13 @@ header {
     width: $base * 77;
     height: $base * 28;
     margin: 0;
+
+    @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
+        @include h3-mobile;
+        text-align: center;
+        width: 300px;
+        height: 64px;
+    }
 }
 
 .start-screen-text {
@@ -200,7 +275,14 @@ header {
     width: $base * 115;
     height: $base * 18;
     margin: $base * 10 0;
-    // margin-bottom: 
+
+    @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
+        width: 300px;
+        height: 100px;
+        text-align: center;
+        margin: 42px auto;
+    }
+
 }
 
 .button-primary {
@@ -211,6 +293,11 @@ header {
         margin-left: $base * 31;
         margin-top: $base;
         margin-bottom: $base * 25;
+    }
+
+    @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
+        margin-left: 46px;
+        margin-bottom: 105px;
     }
 }
 
@@ -225,16 +312,32 @@ header {
         justify-content: center;
         align-items: center;
 
+        @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
+            padding: 42px 0;
+
+        }
 
     }
 
     img {
         margin-right: $base * 31;
+
+        @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
+            margin: 0 auto;
+            width: 260px;
+        }
     }
 
     .right-description {
         width: $base * 107;
         height: $base * 95;
+
+        @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
+            width: 270px;
+
+        }
+
+
     }
 }
 
@@ -251,6 +354,11 @@ header {
         align-items: center;
         padding-bottom: 100px;
 
+        @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
+            padding-top: 42px;
+            padding-bottom: 42px;
+        }
+
     }
 }
 
@@ -263,7 +371,14 @@ header {
     display: flex;
     align-items: center;
     margin-bottom: $base * 15;
+
+    @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
+        flex-direction: column;
+        margin-bottom: 42px;
+    }
 }
+
+
 
 .pet-wrapper {
     display: flex;
@@ -305,13 +420,19 @@ header {
     }
 }
 
+.invisible-small-screen {
+    @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
+        display: none;
+    }
+}
+
 .pet-name {
     @include h4;
     color: $color-dark-l;
     padding: 28px 0;
 }
 
-.arrow-slider {
+.arrow-main-style {
     border: 2px solid $color-primary;
     box-sizing: border-box;
     border-radius: 100px;
@@ -323,11 +444,6 @@ header {
     align-items: center;
     justify-content: center;
 
-    margin: 0 $base * 13;
-
-    @media screen and (max-width: $middle-screen-max) and (min-width:$middle-screen-min) {
-        margin: 0 12px;
-    }
 
     path {
         fill: $color-dark-3xl;
@@ -341,9 +457,38 @@ header {
     }
 }
 
+.arrow-slider {
+
+    margin: 0 $base * 13;
+
+    @media screen and (max-width: $middle-screen-max) and (min-width:$middle-screen-min) {
+        margin: 0 12px;
+    }
+
+    @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
+        display: none;
+    }
+}
+
+.arrow-wrapper-mobile {
+    @media screen and (min-width: $middle-screen-min) {
+        display: none;
+    }
+
+    display: flex;
+    width: 184px;
+    justify-content: space-between;
+
+    margin-top: 20px;
+}
+
 #our-friends-section {
     .button-primary {
         @media screen and (max-width: $middle-screen-max) and (min-width:$middle-screen-min) {
+            margin: 0;
+        }
+
+        @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
             margin: 0;
         }
     }
@@ -361,6 +506,10 @@ header {
 
         padding-bottom: 35px;
 
+        @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
+            padding: 42px 0;
+        }
+
     }
 }
 
@@ -373,6 +522,10 @@ header {
     @media screen and (max-width: $middle-screen-max) and (min-width:$middle-screen-min) {
         width: 630px;
     }
+
+    @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
+        width: 260px;
+    }
 }
 
 .help-icon {
@@ -381,17 +534,29 @@ header {
     }
 
     height: $base * 15;
+
+    @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
+        height: 50px;
+        width: 50px;
+        margin-bottom: 20px;
+    }
 }
 
 .help-description {
     @include h4;
     color: $color-dark-l;
+
+    @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
+        @include h5;
+    }
 }
 
 .help-list {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+
 
     &__item {
         margin-bottom: $base * 10;
@@ -401,6 +566,10 @@ header {
 
             @media screen and (max-width: $middle-screen-max) and (min-width:$middle-screen-min) {
                 margin-left: $base * 15;
+            }
+
+            @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
+                margin-left: 30px;
             }
         }
 
@@ -425,7 +594,20 @@ header {
                 margin-left: 0;
             }
         }
+
+        @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
+            width: 130px;
+            height: 87px;
+            margin-bottom: 30px;
+
+            &:nth-child(1n + 2) {
+                margin-left: 0;
+            }
+        }
+
     }
+
+
 }
 
 
@@ -456,6 +638,26 @@ header {
             }
         }
 
+        @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
+            margin: 0 auto;
+            padding: 42px 0;
+
+            .left-img {
+                margin: 42px 0 0 20px;
+
+                img {
+                    margin: 0;
+                    width: 260px;
+                }
+            }
+        }
+
+        .right-description {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
     }
 }
 
@@ -464,6 +666,10 @@ header {
     color: $color-dark-l;
     margin-top: $base * 5;
     margin-bottom: $base * 4;
+
+    @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
+      margin: 20px auto;
+    }
 
 }
 
@@ -478,6 +684,11 @@ header {
 
     margin-top: $base * 5;
 
+    @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
+        width:280px;
+        text-align: justify;
+    }
+
 }
 
 .credit-card-wrapper {
@@ -489,6 +700,12 @@ header {
     width: $base * 87.5;
     height: $base * 11;
 
+    @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
+        width: 281px;
+        height: 43px;
+        margin: 0 auto;
+    }
+
     path {
         fill: $color-dark-3xl;
     }
@@ -498,6 +715,10 @@ header {
 .card-number {
     @include h4;
     padding-left: 15px;
+
+    @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
+        @include h5
+    }
 
     a {
         color: $color-dark-l;

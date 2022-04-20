@@ -1,3 +1,19 @@
+@mixin logo-title {
+    font-family: 'GeorgiaRegular', serif;
+    @include text-regular;
+    font-size: 34px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+}
+
+@mixin logo-subtitle {
+    font-family: 'ArialRegular', sans-serif;
+    @include text-regular;
+    font-size: 13px;
+    line-height: 15px;
+    letter-spacing: 0.1em
+}
+
 @mixin h2 {
     font-family: 'GeorgiaRegular', serif;
     font-size: 44px;
@@ -15,7 +31,7 @@
 
 @mixin h3-mobile {
     font-family: 'GeorgiaRegular', serif;
-    font-size: 40px;
+    font-size: 25px;
     line-height: 115%;
     letter-spacing: 0.03em;
 }
@@ -62,18 +78,3 @@
     line-height: 160%;
 }
 
-@mixin logo-title {
-    font-family: 'GeorgiaRegular', serif;
-    @include text-regular;
-    font-size: 34px;
-    line-height: 110%;
-    letter-spacing: 0.06em;
-}
-
-@mixin logo-subtitle {
-    font-family: 'ArialRegular', sans-serif;
-    @include text-regular;
-    font-size: 13px;
-    line-height: 15px;
-    letter-spacing: 0.1em
-}

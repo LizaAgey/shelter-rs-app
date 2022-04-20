@@ -7,9 +7,16 @@
         padding-bottom: 0;
         display: flex;
         justify-content: space-between;
+
         @media screen and (max-width: $middle-screen-max) and (min-width:$middle-screen-min) {
             flex-direction: column;
             align-items: center;
+        }
+
+        @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
+            flex-direction: column;
+            align-items: center;
+            padding: 42px 0 0 0;
         }
     }
 
@@ -24,10 +31,25 @@
     justify-content: space-between;
     flex-grow: 1;
     height: 290px;
+
+    @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 .contacts-wrapper {
     margin-bottom: $base * 15;
+
+    @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 300px;
+        margin: 0 auto;
+    }
+
 }
 
 path {
@@ -46,12 +68,27 @@ path {
     @media screen and (max-width: $middle-screen-max) and (min-width:$middle-screen-min) {
         margin-top: 32px;
     }
+
+    @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
+        @include h3-mobile;
+        margin: 0 0 40px 0;
+        text-align: center;
+        width: 250px;
+
+    }
 }
 
 .footer-details {
     display: flex;
     margin-top: $base * 10;
     height: $base * 8;
+
+    @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
+        margin: 0 0 40px 0;
+        align-items: center;
+        justify-content: center;
+
+    }
 
 }
 
@@ -64,15 +101,45 @@ path {
     a {
         color: $color-primary;
     }
+
+    @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
+        width: auto;
+    }
+}
+
+.locations-wrapper {
+    @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 300px;
+        margin: 0 auto;
+        .location {
+            align-self: start;
+        }
+
+    }
+
 }
 
 
 .footer-puppy {
     display: flex;
     margin-left: $base * 40;
+
     @media screen and (max-width: $middle-screen-max) and (min-width:$middle-screen-min) {
         margin-left: 0;
 
+    }
+
+    @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
+        margin-left: 0;
+        margin-top: 220px;
+
+        img {
+            width: 260px;
+        }
     }
 
 }

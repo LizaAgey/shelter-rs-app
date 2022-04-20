@@ -11,6 +11,7 @@
 body {
     font-family: 'ArialRegular', sans-serif;
     @include text-regular;
+
 }
 
 .wrapper-outer {}
@@ -20,6 +21,11 @@ body {
 
     @media screen and (max-width: $middle-screen-max) and (min-width:$middle-screen-min) {
         max-width: 708px;
+        flex-direction: column;
+    }
+
+    @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
+        max-width: 300px;
         flex-direction: column;
     }
 
@@ -52,6 +58,11 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
+        width: 257px;
+    }
+
 }
 
 .logo {
@@ -97,6 +108,17 @@ header {
             }
         }
     }
+
+    @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
+        display: none;
+    }
+}
+
+.burger {
+    @media screen and (min-width: $middle-screen-min) {
+        display: none;
+    }
+
 }
 
 .border-active {
@@ -116,10 +138,17 @@ header {
         justify-content: center;
         align-items: center;
         padding-bottom: 90px;
+
         @media screen and (max-width: $middle-screen-max) and (min-width:$middle-screen-min) {
             padding-bottom: 65px
         }
+
+        @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
+            padding: 42px 0;
+        }
     }
+
+
 }
 
 .middle-title {
@@ -134,6 +163,12 @@ header {
         margin-left: 0;
         font-size: 35px;
         letter-spacing: 0.09em;
+    }
+
+    @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
+        width: 257px;
+        @include h3-mobile;
+        margin: 0 auto;
     }
 }
 
@@ -154,6 +189,13 @@ header {
 
         margin: 0 auto;
         justify-content: center;
+    }
+
+    @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
+        margin: 42px 0 12px 0;
+        flex-direction: column;
+        justify-content: center;
+        width: 300px;
     }
 }
 
@@ -186,6 +228,10 @@ header {
     &__item {
         &+& {
             margin-left: $base * 10;
+
+            @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
+                margin-left: 0;
+            }
         }
 
         &:nth-child(5n) {
@@ -207,6 +253,12 @@ header {
     }
 }
 
+.invisible-small-screen {
+    @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
+        display: none;
+    }
+}
+
 .pet-name {
     @include h4;
     color: $color-dark-l;
@@ -223,10 +275,17 @@ header {
         margin: 10px 0;
 
     }
+
+    @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
+        margin: 0 auto;
+        gap: 10px;
+        padding-left: 0;
+    }
 }
 
 .pagination-list__item {
-    @include h4 border-radius: 100px;
+    @include h4;
+    border-radius: 100px;
     border: 2px solid $color-primary;
     width: 50px;
     height: 50px;
