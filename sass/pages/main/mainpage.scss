@@ -127,6 +127,39 @@ a {
         flex-direction: column;
 
     }
+
+    &::before {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        display: none;
+        width: 100vw;
+        height: 100vh;
+        content: "";
+        background-color: rgba(41, 41, 41, 0.6);
+    }
+
+    &--active-nav {
+
+        &::before {
+            display: block;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: $color-dark-3xl;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 100vh;
+        }
+
+
+    }
 }
 
 header {
@@ -141,6 +174,7 @@ header {
 
 .logo {
     cursor: pointer;
+    z-index: 10;
 }
 
 .title {
@@ -196,8 +230,15 @@ header {
 }
 
 .burger {
+    z-index: 10;
+
     @media screen and (min-width: $middle-screen-min) {
         display: none;
+    }
+
+    &--click {
+        transform: rotate(90deg);
+        transition: $transition * 2;
     }
 }
 
