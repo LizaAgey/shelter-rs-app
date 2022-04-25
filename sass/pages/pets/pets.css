@@ -1,47 +1,59 @@
 @font-face {
   font-family: "ArialRegular";
-  src: url("../../assets/fonts/ArialRegular.ttf") format("truetype");
+  src: url("../../../assets/fonts/ArialRegular.ttf") format("truetype");
+  src: url("../../../assets/fonts/Arial.eot");
+  src: url("../../../assets/fonts/Arial.eot?#iefix") format("embedded-opentype"), url("../../../assets/fonts/Arial.woff") format("woff");
   font-style: normal;
   font-weight: 400;
 }
 
 @font-face {
   font-family: "ArialBold";
-  src: url("../../assets/fonts/ArialBold.ttg") format("truetype");
+  src: url("../../../assets/fonts/ArialBold.ttg") format("truetype");
+  src: url("../../../assets/fonts/Arial-BoldMT.eot");
+  src: url("../../../assets/fonts/Arial-BoldMT.eot?#iefix") format("embedded-opentype"), url("../../../assets/fonts/Arial-BoldMT.woff") format("woff");
   font-style: normal;
   font-weight: 700;
 }
 
 @font-face {
   font-family: "ArialItalic";
-  src: url("../../assets/fonts/ArialItalic.ttg") format("truetype");
+  src: url("../../../assets/fonts/ArialItalic.ttg") format("truetype");
+  src: url("../../../assets/fonts/Arial-ItalicMT.eot");
+  src: url("../../../assets/fonts/Arial-ItalicMT.eot?#iefix") format("embedded-opentype"), url("../../../assets/fonts/Arial-ItalicMT.woff") format("woff");
   font-style: italic;
   font-weight: 400;
 }
 
 @font-face {
   font-family: "GeorgiaRegular";
-  src: url("../../assets/fonts/GeorgiaRegular.ttf") format("truetype");
+  src: url("../../../assets/fonts/GeorgiaRegular.ttf") format("truetype");
+  src: url("../../../assets/fonts/Georgia.eot");
+  src: url("../../../assets/fonts/Georgia.eot?#iefix") format("embedded-opentype"), url("../../../assets/fonts/Georgia.woff") format("woff");
   font-style: normal;
   font-weight: 400;
 }
 
 @font-face {
   font-family: "GeorgiaBold";
-  src: url("../../assets/fonts/GeorgiaBold.ttg") format("truetype");
+  src: url("../../../assets/fonts/GeorgiaBold.ttg") format("truetype");
+  src: url("../../../assets/fonts/Georgia-Bold.eot");
+  src: url("../../../assets/fonts/Georgia-Bold.eot?#iefix") format("embedded-opentype"), url("../../../assets/fonts/Georgia-Bold.woff") format("woff");
   font-style: normal;
   font-weight: 700;
 }
 
 @font-face {
   font-family: "GeorgiaItalic";
-  src: url("../../assets/fonts/GeorgiaItalic.ttg") format("truetype");
+  src: url("../../../assets/fonts/GeorgiaItalic.ttg") format("truetype");
+  src: url("../../../assets/fonts/Georgia-Italic.eot");
+  src: url("../../../assets/fonts/Georgia-Italic.eot?#iefix") format("embedded-opentype"), url("../../../assets/fonts/Georgia-Italic.woff") format("woff");
   font-style: italic;
   font-weight: 400;
 }
 
 .section-footer {
-  background: url(noise_lines_transparent@2X.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
+  background: radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
 }
 
 .section-footer .wrapper-inner {
@@ -161,7 +173,7 @@ path {
 @media screen and (max-width: 767px) and (min-width: 320px) {
   .footer-title {
     font-family: 'GeorgiaRegular', serif;
-    font-size: 25px;
+    font-size: 23px;
     line-height: 115%;
     letter-spacing: 0.03em;
     margin: 0 0 40px 0;
@@ -192,7 +204,7 @@ path {
 
 .footer-text {
   font-family: 'GeorgiaRegular', serif;
-  font-size: 22px;
+  font-size: 20px;
   line-height: 115%;
   letter-spacing: 0.06em;
   text-decoration: none;
@@ -466,7 +478,7 @@ header {
   .middle-title {
     width: 257px;
     font-family: 'GeorgiaRegular', serif;
-    font-size: 25px;
+    font-size: 23px;
     line-height: 115%;
     letter-spacing: 0.03em;
     margin: 0 auto;
@@ -602,7 +614,7 @@ header {
 
 .pet-name {
   font-family: 'GeorgiaRegular', serif;
-  font-size: 22px;
+  font-size: 20px;
   line-height: 115%;
   letter-spacing: 0.06em;
   color: #545454;
@@ -634,7 +646,7 @@ header {
 
 .pagination-list__item {
   font-family: 'GeorgiaRegular', serif;
-  font-size: 22px;
+  font-size: 20px;
   line-height: 115%;
   letter-spacing: 0.06em;
   border-radius: 100px;

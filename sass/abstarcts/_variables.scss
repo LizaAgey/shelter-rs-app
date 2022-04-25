@@ -3,7 +3,7 @@ $base: 4px;
 $padding-vertical-top: $base * 20;
 $padding-vertical-bottom: $base * 25;
 
-$bg-color-dark: url(noise_lines_transparent@2X.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
+$bg-color-dark: radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
 $color-light-s: #FAFAFA;
 $color-light-l: #F6F6F6;
 $color-light-xl: #FFFFFF;
