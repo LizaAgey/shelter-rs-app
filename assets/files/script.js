@@ -1,6 +1,7 @@
 const BURGER = document.querySelector('.burger')
 const HEADER_BURGER_RIGHT = document.querySelector('.header-burger-right-menu')
 const SEC_INTRODUCTION = document.querySelector('.section-introduction')
+const SEC_INTRODUCTION_ACTIVE = document.querySelector('.section-introduction--active-nav')
 const HEADER = document.querySelector('header')
 const BODY = document.querySelector('body')
 const NAV_WRAPPER = document.querySelector('.nav-wrapper')
@@ -9,8 +10,17 @@ const RIGHT_MENU = document.querySelector('.right-menu')
 //нажатие на бургер при закрытом правом меню открывает его
 BURGER.addEventListener('click', moveRightMenu)
 
-//нажатие на бургер из меню при закрывает его
-HEADER_BURGER_RIGHT.addEventListener('click', moveRightMenu)
+
+//функция меняет класс для изменения стиля правого меню + добавляет\убирает скролл в зависимости от класса
+function moveRightMenu() {
+    SEC_INTRODUCTION.classList.toggle('section-introduction--active-nav')
+
+    if (SEC_INTRODUCTION.classList.contains('section-introduction--active-nav')) {
+        hideScroll();
+    } else {
+        showScroll();
+    }
+}
 
 //функции для добавления и скрытия скролла
 const hideScroll = () => {
@@ -48,7 +58,7 @@ const resetNav = () => {
 
 window.addEventListener('resize', resetNav)
 
-//функция закрытия меню при нажатии на ссылку из меню
+//TODO:
 class Menu {
     constructor(elem) {
         this._elem = elem;
@@ -69,13 +79,15 @@ class Menu {
 
 new Menu(menu);
 
-function moveRightMenu() {
-    SEC_INTRODUCTION.classList.toggle('section-introduction--active-nav')
+//закрытие меню при нажатии ВНЕ его
 
-    if (SEC_INTRODUCTION.classList.contains('section-introduction--active-nav')) {
-        hideScroll();
-    } else {
-        showScroll();
+window.addEventListener('mouseup', function(event){
+	var box = RIGHT_MENU;
+	if (event.target != box && event.target.parentNode != box){
+        resetNav()
     }
-}
+});
+
+
+
 

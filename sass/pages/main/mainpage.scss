@@ -13,16 +13,17 @@
 body {
     font-family: 'ArialRegular', sans-serif;
     @include text-regular;
-    
+
 }
 
 .wrapper-outer {
     @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
-        
+
         overflow-x: hidden;
-     }
-     
+    }
+
 }
+
 .wrapper-inner {
     max-width: 1200px;
 
@@ -42,7 +43,7 @@ body {
     }
 
     @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
-        
+
         max-width: 300px;
         flex-direction: column;
 
@@ -119,7 +120,7 @@ a {
 // === 1 - START SCREEN ===
 .section-introduction {
     background: $bg-color-dark;
-   
+
 
 
     .wrapper-inner {
@@ -138,7 +139,7 @@ a {
         flex-direction: column;
 
     }
-
+// -- Right menu --
     &::before {
         position: fixed;
         top: 0;
@@ -162,7 +163,7 @@ a {
             justify-content: flex-start;
             align-items: center;
 
-            background-color: $color-dark-3xl;
+            background-color: $color-dark-light-3xl;
 
             transform: translateX(0%);
             right: 0;
@@ -172,21 +173,22 @@ a {
             height: 4000px;
 
             .nav-wrapper__item+.nav-wrapper__item {
-                
+
                 margin: 40px 0 0 0;
             }
-            
+
             .nav-wrapper {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 margin-top: 158px;
-                
+
 
                 &__item-link {
                     @include paragraph-mobile-menu;
                 }
             }
+
         }
 
         .header-burger-right-menu {
@@ -206,7 +208,8 @@ a {
         .border-active {
             width: 243px;
         }
-       .burger {
+
+        .burger {
             transform: rotate(90deg);
         }
     }
@@ -220,10 +223,13 @@ a {
     transition: 1s;
     height: 100vh;
     width: 320px;
+
     @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
-        display: flex;    
+        display: flex;
     }
 }
+
+// -- / Right menu --
 
 header {
     display: flex;
