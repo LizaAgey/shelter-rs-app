@@ -474,7 +474,7 @@ a {
 }
 
 .section-introduction--active-nav .right-menu .nav-wrapper__item + .nav-wrapper__item {
-  margin: 0;
+  margin: 40px 0 0 0;
 }
 
 .section-introduction--active-nav .right-menu .nav-wrapper {
@@ -518,6 +518,11 @@ a {
 
 .section-introduction--active-nav .border-active {
   width: 243px;
+}
+
+.section-introduction--active-nav .burger {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
 }
 
 .right-menu {
@@ -646,13 +651,6 @@ header {
   .burger {
     display: none;
   }
-}
-
-.burger--click {
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
 }
 
 .wrapper-start-screen {

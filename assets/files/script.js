@@ -1,36 +1,18 @@
 const BURGER = document.querySelector('.burger')
-const BURGER_RIGHT = document.querySelector('.header-burger-right-menu')
+const HEADER_BURGER_RIGHT = document.querySelector('.header-burger-right-menu')
 const SEC_INTRODUCTION = document.querySelector('.section-introduction')
 const HEADER = document.querySelector('header')
 const BODY = document.querySelector('body')
 const NAV_WRAPPER = document.querySelector('.nav-wrapper')
 const RIGHT_MENU = document.querySelector('.right-menu')
 
+//нажатие на бургер при закрытом правом меню открывает его
+BURGER.addEventListener('click', moveRightMenu)
 
-BURGER.addEventListener('click', () => {
+//нажатие на бургер из меню при закрывает его
+HEADER_BURGER_RIGHT.addEventListener('click', moveRightMenu)
 
-    SEC_INTRODUCTION.classList.toggle('section-introduction--active-nav')
-    
-
-    if (SEC_INTRODUCTION.classList.contains('section-introduction--active-nav')) {
-        hideScroll();
-    } else {
-        showScroll();
-    }
-
-})
-
-BURGER_RIGHT.addEventListener('click', () => {
-    SEC_INTRODUCTION.classList.toggle('section-introduction--active-nav')
-    
-
-    if (SEC_INTRODUCTION.classList.contains('section-introduction--active-nav')) {
-        hideScroll();
-    } else {
-        showScroll();
-    }
-})
-
+//функции для добавления и скрытия скролла
 const hideScroll = () => {
     document.body.style.paddingRight = `${getScrollBarWidth()}px`;
     document.body.style.overflow = 'hidden'
@@ -40,6 +22,7 @@ const showScroll = () => {
     document.body.style.overflow = 'visible'
 }
 
+//функция для вычисления ширины скролла
 const getScrollBarWidth = () => {
     const outer = document.createElement('div')
 
@@ -57,9 +40,42 @@ const getScrollBarWidth = () => {
     return scrollBarWidth
 }
 
+//функция для закрытия правого меню при изменении ширины экрана
 const resetNav = () => {
     SEC_INTRODUCTION.classList.remove('section-introduction--active-nav')
     showScroll()
 }
 
 window.addEventListener('resize', resetNav)
+
+//функция закрытия меню при нажатии на ссылку из меню
+class Menu {
+    constructor(elem) {
+        this._elem = elem;
+        elem.onclick = this.onClick.bind(this);
+    }
+
+    redirect() {
+        resetNav()
+    }
+
+    onClick(event) {
+        let action = event.target.dataset.action;
+        if (action) {
+            this[action]();
+        }
+    }
+}
+
+new Menu(menu);
+
+function moveRightMenu() {
+    SEC_INTRODUCTION.classList.toggle('section-introduction--active-nav')
+
+    if (SEC_INTRODUCTION.classList.contains('section-introduction--active-nav')) {
+        hideScroll();
+    } else {
+        showScroll();
+    }
+}
+

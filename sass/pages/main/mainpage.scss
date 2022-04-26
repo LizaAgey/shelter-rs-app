@@ -172,14 +172,16 @@ a {
             height: 4000px;
 
             .nav-wrapper__item+.nav-wrapper__item {
-                margin: 0;
+                
+                margin: 40px 0 0 0;
             }
-
+            
             .nav-wrapper {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 margin-top: 158px;
+                
 
                 &__item-link {
                     @include paragraph-mobile-menu;
@@ -204,7 +206,9 @@ a {
         .border-active {
             width: 243px;
         }
-
+       .burger {
+            transform: rotate(90deg);
+        }
     }
 
 }
@@ -301,10 +305,6 @@ header {
         display: none;
     }
 
-    &--click {
-        transform: rotate(90deg);
-        transition: $transition * 2;
-    }
 }
 
 .wrapper-start-screen {
