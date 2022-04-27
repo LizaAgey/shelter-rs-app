@@ -101,7 +101,7 @@ window.addEventListener('mouseup', function (event) {
 
 const petsJSON = '../../assets/files/pets.json';
 
-fetch(petsJSON)
+ fetch(petsJSON)
     .then(response => response.json())
     .then(data => {
         console.log(data)
@@ -134,117 +134,7 @@ fetch(petsJSON)
         })
 
     })
-    .then(function slide(wrapper, items, prev, next) {
-
-        let posX1 = 0
-        let posX2 = 0
-        let posInitial
-        let posFinal
-        let threshold = 100
-        let slides = document.getElementsByClassName('pet-wrapper')
-        let slidesLength = slides.length
-        let slideSize = 270
-        let firstSlide = slides[0]
-        let lastSlide = slides[slides.length - 1]
-        let cloneFirst = firstSlide.cloneNode(true)
-        let cloneLast = lastSlide.cloneNode(true)
-        let index = 0
-        let allowShift = true
     
-    
-        items.appendChild(cloneFirst);
-        items.insertBefore(cloneLast, firstSlide);
-    
-        wrapper.classList.add('loaded');
-    
-        items.onmousedown = dragStart;
-    
-        items.addEventListener('touchstart', dragStart);
-        items.addEventListener('touchend', dragEnd);
-        items.addEventListener('touchmove', dragAction);
-    
-        prev.addEventListener('click', function () { shiftSlide(-1) });
-        next.addEventListener('click', function () { shiftSlide(1) });
-    
-        function dragStart(e) {
-            e = e || window.event;
-            e.preventDefault();
-            posInitial = items.offsetLeft;
-    
-            if (e.type == 'touchstart') {
-                posX1 = e.touches[0].clientX;
-            } else {
-                posX1 = e.clientX;
-                document.onmouseup = dragEnd;
-                document.onmousemove = dragAction;
-            }
-        }
-    
-        function dragAction(e) {
-            e = e || window.event;
-    
-            if (e.type == 'touchmove') {
-                posX2 = posX1 - e.touches[0].clientX;
-                posX1 = e.touches[0].clientX;
-            } else {
-                posX2 = posX1 - e.clientX;
-                posX1 = e.clientX;
-            }
-    
-            items.style.left = `${items.offsetLeft - posX2}px`
-    
-        }
-    
-        function dragEnd(e) {
-            posFinal = items.offsetLeft;
-    
-            if (posFinal - posInitial < -threshold) {
-                shiftSlide(1, 'drag')
-            } else if (posFinal - posInitial > threshold) {
-                shiftSlide(-1, 'drag')
-            } else {
-                document.onmouseup = null;
-                document.onmousemove = null;
-            }
-        }
-    
-        function shiftSlide(dir, action) {
-            items.classList.add('shifting');
-    
-            if (allowShift) {
-                if (!action) { posInitial = items.offsetLeft; }
-    
-                if (dir == 1) {
-                    items.style.left = (posInitial - slideSize) + "px";
-                    index++;
-                } else if (dir == -1) {
-                    items.style.left = (posInitial + slideSize) + "px";
-                    index--;
-                }
-            };
-    
-            allowShift = false;
-        }
-    
-        items.addEventListener('transitionend', checkIndex)
-    
-        function checkIndex() {
-            items.classList.remove('shifting');
-    
-            if (index == -1) {
-                items.style.left = -(slidesLength * slideSize) + "px";
-                index = slidesLength - 1;
-            }
-    
-            if (index == slidesLength) {
-                items.style.left = -(1 * slideSize) + "px";
-                index = 0;
-            }
-    
-            allowShift = true;
-        }
-    })
-    .then(slide(slider, sliderItems, BTN_LEFT, BTN_RIGHT))
 
 
 const slider = document.getElementById('slider')
@@ -255,6 +145,115 @@ const BTN_RIGHT = document.getElementById("next");
 
 
 
+function slide(wrapper, items, prev, next) {
+
+    let posX1 = 0
+    let posX2 = 0
+    let posInitial
+    let posFinal
+    let threshold = 100
+    let slides = document.getElementsByClassName('pet-wrapper')
+    let slidesLength = slides.length
+    let slideSize = 270
+    let firstSlide = slides[0]
+    let lastSlide = slides[slides.length - 1]
+    let cloneFirst = firstSlide.cloneNode(true)
+    let cloneLast = lastSlide.cloneNode(true)
+    let index = 0
+    let allowShift = true
 
 
+    items.appendChild(cloneFirst);
+    items.insertBefore(cloneLast, firstSlide);
 
+    wrapper.classList.add('loaded');
+
+    items.onmousedown = dragStart;
+
+    items.addEventListener('touchstart', dragStart);
+    items.addEventListener('touchend', dragEnd);
+    items.addEventListener('touchmove', dragAction);
+
+    prev.addEventListener('click', function () { shiftSlide(-1) });
+    next.addEventListener('click', function () { shiftSlide(1) });
+
+    function dragStart(e) {
+        e = e || window.event;
+        e.preventDefault();
+        posInitial = items.offsetLeft;
+
+        if (e.type == 'touchstart') {
+            posX1 = e.touches[0].clientX;
+        } else {
+            posX1 = e.clientX;
+            document.onmouseup = dragEnd;
+            document.onmousemove = dragAction;
+        }
+    }
+
+    function dragAction(e) {
+        e = e || window.event;
+
+        if (e.type == 'touchmove') {
+            posX2 = posX1 - e.touches[0].clientX;
+            posX1 = e.touches[0].clientX;
+        } else {
+            posX2 = posX1 - e.clientX;
+            posX1 = e.clientX;
+        }
+
+        items.style.left = `${items.offsetLeft - posX2}px`
+
+    }
+
+    function dragEnd(e) {
+        posFinal = items.offsetLeft;
+
+        if (posFinal - posInitial < -threshold) {
+            shiftSlide(1, 'drag')
+        } else if (posFinal - posInitial > threshold) {
+            shiftSlide(-1, 'drag')
+        } else {
+            document.onmouseup = null;
+            document.onmousemove = null;
+        }
+    }
+
+    function shiftSlide(dir, action) {
+        items.classList.add('shifting');
+
+        if (allowShift) {
+            if (!action) { posInitial = items.offsetLeft; }
+
+            if (dir == 1) {
+                items.style.left = (posInitial - slideSize) + "px";
+                index++;
+            } else if (dir == -1) {
+                items.style.left = (posInitial + slideSize) + "px";
+                index--;
+            }
+        };
+
+        allowShift = false;
+    }
+
+    items.addEventListener('transitionend', checkIndex)
+
+    function checkIndex() {
+        items.classList.remove('shifting');
+
+        if (index == -1) {
+            items.style.left = -(slidesLength * slideSize) + "px";
+            index = slidesLength - 1;
+        }
+
+        if (index == slidesLength) {
+            items.style.left = -(1 * slideSize) + "px";
+            index = 0;
+        }
+
+        allowShift = true;
+    }
+}
+
+slide(slider, sliderItems, BTN_LEFT, BTN_RIGHT)
