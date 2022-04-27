@@ -139,7 +139,8 @@ a {
         flex-direction: column;
 
     }
-// -- Right menu --
+
+    // -- Right menu --
     &::before {
         position: fixed;
         top: 0;
@@ -477,17 +478,48 @@ header {
     @include button-secondary-hover;
 }
 
-.slider-wrapper {
+.slider {
     display: flex;
+    flex-direction: column;
     align-items: center;
     margin-bottom: $base * 15;
+    transform: translate(-50%, -50%);
 
     @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
-        flex-direction: column;
+
         margin-bottom: 42px;
     }
 }
 
+.slides-wrapper {
+    overflow: hidden;
+    position: relative;
+    width: 990px;
+    display: flex;
+    z-index: 1;
+
+    @media screen and (max-width: $middle-screen-max) and (min-width:$middle-screen-min) {
+        width: 580px;
+    }
+
+    @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
+        width: 300px;
+    }
+
+}
+
+.slides {
+    display: flex;
+    position: relative;
+    top: 0;
+    left: -990px;
+    width: 10000px;
+
+}
+
+.slides.shifting {
+    transition: left .2s ease-out;
+}
 
 
 .pet-wrapper {
@@ -502,6 +534,10 @@ header {
     padding-bottom: $base * 7;
 
     &__item {
+        transition: all 1s;
+        position: relative;
+
+
         &+& {
             margin-left: $base * 22;
 
@@ -567,42 +603,41 @@ header {
     }
 }
 
-.arrow-slider {
-
-    margin: 0 $base * 13;
+.arrows-wrapper {
+    display: flex;
+    position: absolute;
+    justify-content: space-between;
+    align-items: center;
+    width: 1200px;
+    margin-top: 192px;
 
     @media screen and (max-width: $middle-screen-max) and (min-width:$middle-screen-min) {
-        margin: 0 12px;
+        width: 708px;
     }
 
     @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
-        display: none;
+        width: 184px;
+        margin-top: 450px;
     }
 }
 
-.arrow-wrapper-mobile {
-    @media screen and (min-width: $middle-screen-min) {
-        display: none;
-    }
-
-    display: flex;
-    width: 184px;
-    justify-content: space-between;
-
-    margin-top: 20px;
+.prev:active,
+.next:active {
+    transform: scale(0.8);
 }
 
 #our-friends-section {
     .button-primary {
-        @media screen and (max-width: $middle-screen-max) and (min-width:$middle-screen-min) {
-            margin: 0;
-        }
+        margin: 40px 0 0 0;
 
         @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
-            margin: 0;
+            margin: 60px 0 0 0;
         }
     }
 }
+
+
+
 
 // === 4 - HELP ===
 .section-help {

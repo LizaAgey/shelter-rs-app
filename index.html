@@ -134,54 +134,32 @@
     <section class="wrapper-outer section-slider">
         <div class="wrapper-inner" id="our-friends-section">
             <div class="middle-title">Our friends who<br>are looking for a house</div>
-            <div class="slider-wrapper">
-                <a href="" class="arrow-slider arrow-main-style">
-                    <svg width="14" height="6" viewBox="0 0 14 6" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M14 2V4H3V6L0 3L3 0V2H14Z" />
-                    </svg>
-                </a>
-                <div class="pet-wrapper pet-wrapper__item">
-                    <img src="./assets/images/pets-katrine.png" alt="katrine">
-                    <div class="pet-name">Katrine</div>
-                    <button class="button-secondary">Learn more</button>
+            <div class="slider">
 
-                </div>
-                <div class="pet-wrapper pet-wrapper__item invisible-small-screen">
-                    <img src="./assets/images/pets-jennifer.png" alt="jennifer">
-                    <div class="pet-name">Jennifer</div>
-                    <button class="button-secondary">Learn more</button>
 
+                <div class="slides-wrapper">
+                    <div class="slides" id="slides">
+                    </div>
                 </div>
-                <div class="pet-wrapper pet-wrapper__item invisible-middle-screen invisible-small-screen">
-                    <img src="./assets/images/pets-woody.png" alt="woody">
-                    <div class="pet-name">Woody</div>
-                    <button class="button-secondary">Learn more</button>
-                </div>
-                <a href="" class="arrow-slider arrow-main-style">
-                    <svg width="14" height="6" viewBox="0 0 14 6" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0 4V2L11 2V0L14 3L11 6V4L0 4Z" />
-                    </svg>
-                </a>
 
-                <!--Arrows for mobile version-->
-                <div class="arrow-wrapper-mobile ">
-                    <a href="" class="arrow-slider-mobile arrow-main-style">
+                <div class="arrows-wrapper">
+                    <div id="prev" class="arrow-slider arrow-main-style prev">
                         <svg width="14" height="6" viewBox="0 0 14 6" xmlns="http://www.w3.org/2000/svg">
                             <path d="M14 2V4H3V6L0 3L3 0V2H14Z" />
                         </svg>
-                    </a>
-                    <a href="" class="arrow-slider-mobile arrow-main-style">
+                    </div>
+                    <div id="next" class="arrow-slider arrow-main-style next">
                         <svg width="14" height="6" viewBox="0 0 14 6" xmlns="http://www.w3.org/2000/svg">
                             <path d="M0 4V2L11 2V0L14 3L11 6V4L0 4Z" />
                         </svg>
-                    </a>
+                    </div>
                 </div>
-                <!--END Arrows for mobile version-->
+
+
+                <a href="./pages/pets/pets.html">
+                    <button class="button-primary">Get to know the rest</button>
+                </a>
             </div>
-            <a href="./pages/pets/pets.html">
-                <button class="button-primary">Get to know the rest</button>
-            </a>
-        </div>
     </section>
     <!-- / Slider-->
 
@@ -441,8 +419,8 @@
     </footer>
     <!-- / Footer-->
 
-
-    <script src="./assets/files/script.js"></script>
+    <script type="text/javascript" src="./assets/files/pets.json"></script>
+    <script type="text/javascript" src="./assets/files/script.js"></script>
 </body>
 
 </html>
