@@ -464,10 +464,23 @@ header {
         justify-content: center;
         align-items: center;
         padding-bottom: 100px;
+        @media screen and (max-width: $middle-screen-max) and (min-width:$middle-screen-min) {
+            height: 600px;
+
+            .middle-title {
+                margin-top: 300px;
+            }
+        }
 
         @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
             padding-top: 42px;
             padding-bottom: 42px;
+            height: 650px;
+
+            .middle-title {
+                margin-top: 300px;
+            }
+            
         }
 
     }
@@ -476,6 +489,7 @@ header {
 .button-secondary {
     @include button-secondary;
     @include button-secondary-hover;
+
 }
 
 .slider {
@@ -487,9 +501,14 @@ header {
     margin-top: 300px;
     transform: translate(-50%, -50%);
 
+    @media screen and (max-width: $middle-screen-max) and (min-width:$middle-screen-min) {
+        width: 500px;
+        margin: 250px 0 0 500px;
+    }
+
     @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
 
-        margin-bottom: 42px;
+        margin: 280px 0 0 280px;
     }
 }
 
@@ -501,11 +520,12 @@ header {
     z-index: 1;
 
     @media screen and (max-width: $middle-screen-max) and (min-width:$middle-screen-min) {
-        width: 580px;
+        width: 500px;
+
     }
 
     @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
-        width: 300px;
+        width: 270px;
     }
 
 }
@@ -614,7 +634,8 @@ header {
     margin-top: 192px;
 
     @media screen and (max-width: $middle-screen-max) and (min-width:$middle-screen-min) {
-        width: 708px;
+        width: 650px;
+
     }
 
     @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
@@ -635,7 +656,7 @@ header {
         margin: 40px 0 0 0;
 
         @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
-            margin: 60px 0 0 0;
+            margin: 98px 0 0 0;
         }
     }
 }
