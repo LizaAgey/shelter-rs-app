@@ -117,7 +117,7 @@ async function getPetsForPagination() {
 
                 //вставляем нужное количество карточек в зависимости от ширины экрана
 
-                if (screen.width > 1280) {
+                if (screen.width >= 1280) {
                     sortedArrIDs.forEach((id) => {
 
                         let paginationDiv = document.getElementById("pets-pagination-wrapper")
@@ -132,7 +132,7 @@ async function getPetsForPagination() {
 
                         paginationDiv.appendChild(petItem)
                     })
-                } else if (screen.width <= 1280 && screen.width >= 768) {
+                } else if (screen.width < 1280 && screen.width >= 768) {
 
                     for (let i = 0; i < 6; i++) {
                         let id = sortedArrIDs[i]
