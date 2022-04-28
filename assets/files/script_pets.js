@@ -35,7 +35,7 @@ async function getPetsForPagination() {
 
                         paginationDiv.appendChild(petItem)
                     })
-                } else if (screen.width <= 1280 && screen.width > 768) {
+                } else if (screen.width <= 1280 && screen.width >= 768) {
 
                     for (let i = 0; i < 6; i++) {
                         let id = sortedArrIDs[i]
@@ -53,7 +53,7 @@ async function getPetsForPagination() {
                         paginationDiv.appendChild(petItem)
                     }
 
-                } else if (screen.width <= 768 && screen.width >= 320) {
+                } else if (screen.width < 768 && screen.width >= 320) {
                     for (let i = 0; i < 3; i++) {
                         let id = sortedArrIDs[i]
 
@@ -76,7 +76,7 @@ async function getPetsForPagination() {
 
 }
 
-// getPetsForPagination()
+
 
 const pagRightOne = document.getElementById("pag-right")
 const pagRightEnd = document.getElementById("pag-right-end")
@@ -109,6 +109,23 @@ async function pagination() {
         pagRightOne.classList.add("enabled-pagination")
     }
 
+    function disableRightEnd () {
+        pagRightEnd.classList.add("disabled-pagination")
+        pagRightEnd.classList.remove("enabled-pagination")
+    }
+    function enableRightEnd () {
+        pagRightEnd.classList.remove("disabled-pagination")
+        pagRightEnd.classList.add("enabled-pagination")
+    }
+
+    function disableLeftEnd () {
+        pagLeftEnd.classList.add("disabled-pagination")
+        pagLeftEnd.classList.remove("enabled-pagination")
+    }
+    function enableLeftEnd () {
+        pagLeftEnd.classList.remove("disabled-pagination")
+        pagLeftEnd.classList.add("enabled-pagination")
+    }
 
     function moveRight() {
         let paginationDiv = document.getElementById("pets-pagination-wrapper")
@@ -116,7 +133,8 @@ async function pagination() {
         
         function addNewCards () {
             paginationDiv.innerHTML = ""
-            getPetsForPagination()
+            setTimeout(getPetsForPagination(), 10000)
+            console.log('hi')
             pagMiddle.innerText = middleNum + 1
         }
         
@@ -124,30 +142,39 @@ async function pagination() {
 
         if (screen.width > 1280 && middleNum == 5) {
             enableLeft ()
-            disableRight ()   
+            enableLeftEnd()
+            disableRight ()  
+            disableRightEnd() 
             addNewCards ()         
             return    
         } else if  (screen.width > 1280 && middleNum <6) {
             addNewCards ()
             enableLeft ()
+            enableLeftEnd()
             
 
         } else if (screen.width <= 1280 && screen.width > 768 && middleNum == 7) { 
             enableLeft ()
+            enableLeftEnd ()
             disableRight ()
+            disableRightEnd ()
             addNewCards ()
             return        
         } else if (screen.width <= 1280 && screen.width > 768 && middleNum < 8) {
             enableLeft ()
+            enableLeftEnd()
             addNewCards ()
 
         } else if (screen.width <= 768 && screen.width >= 320 && middleNum == 15) {
             enableLeft ()
+            enableLeftEnd()
             disableRight ()
+            disableRightEnd ()
             addNewCards ()
             return
         } else if (screen.width <= 768 && screen.width >= 320 && middleNum < 16) {
             enableLeft ()
+            enableLeftEnd()
             addNewCards ()
         }
 
@@ -171,14 +198,18 @@ async function pagination() {
 
         if(middleNum == 2) {
             disableLeft()
+            disableLeftEnd()
             addNewCards()
             return
         } else if (middleNum == 1) {
             disableLeft()
+            disableLeftEnd()
             return
         } else if (screen.width > 1280 && middleNum <= 6) {
             enableLeft ()
+            enableLeftEnd()
             enableRight()
+            enableRightEnd()
             addNewCards ()
             return    
         } else if (screen.width <= 1280 && screen.width > 768 && middleNum <= 8) { 
@@ -188,7 +219,9 @@ async function pagination() {
             return        
         } else if (screen.width <= 768 && screen.width >= 320 && middleNum <= 16) {
             enableLeft ()
+            enableLeftEnd()
             enableRight()
+            enableRightEnd()
             addNewCards ()
 
             return
@@ -197,6 +230,68 @@ async function pagination() {
     }
 
     pagLeftOne.addEventListener('click', moveLeft)
+
+    function moveRightEnd () {
+
+        let paginationDiv = document.getElementById("pets-pagination-wrapper")
+        let middleNum = parseInt(pagMiddle.innerText)
+        
+        function addNewCards () {
+            paginationDiv.innerHTML = ""
+            getPetsForPagination()
+        }
+
+        if ((screen.width > 1280) && (middleNum <= 5)) {
+            addNewCards ()
+            disableRightEnd()
+            disableRight()
+            enableLeft()
+            enableLeftEnd ()
+            pagMiddle.innerText = 6
+            return
+        } else if(screen.width <= 1280 && screen.width > 768 && middleNum <= 7) {
+            addNewCards ()
+            disableRightEnd()
+            disableRight()
+            enableLeft()
+            enableLeftEnd ()
+            pagMiddle.innerText = 8
+            return               
+        } else if (screen.width <= 768 && screen.width >= 320 && middleNum <= 15) {
+            addNewCards ()
+            disableRightEnd()
+            disableRight()
+            enableLeft()
+            enableLeftEnd ()
+            pagMiddle.innerText = 16
+            return    
+        }
+
+    }
+    pagRightEnd.addEventListener('click', moveRightEnd)
+
+    function moveLeftEnd () {
+
+        let paginationDiv = document.getElementById("pets-pagination-wrapper")
+        let middleNum = parseInt(pagMiddle.innerText)
+        
+        function addNewCards () {
+            paginationDiv.innerHTML = ""
+            getPetsForPagination()
+            pagMiddle.innerText = 1
+        }
+        if(middleNum == 1) {
+            return
+        } else {
+        addNewCards ()
+        disableLeftEnd ()
+        disableLeft ()
+        enableRight()
+        enableRightEnd()
+        return
+        }
+    }
+    pagLeftEnd.addEventListener('click', moveLeftEnd)
 
 }
 
@@ -207,14 +302,3 @@ pagination()
 
 
 
-
-// if (screen.width > 1280) {
-    
-// } else if (screen.width <= 1280 && screen.width > 768) {
-
-    
-
-// } else if (screen.width <= 768 && screen.width >= 320) {
-    
-
-// }

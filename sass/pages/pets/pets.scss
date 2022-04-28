@@ -297,9 +297,11 @@ header {
     align-items: center;
     margin-left: $base * 10;
     width: 1200px;
+    height: 930px;
 
     @media screen and (max-width: $middle-screen-max) and (min-width:$middle-screen-min) {
         width: 708px;
+        height: 1400px;
 
         margin: 0 auto;
         justify-content: center;
@@ -310,6 +312,7 @@ header {
         flex-direction: column;
         justify-content: center;
         width: 300px;
+        height: 1400px;
     }
 }
 

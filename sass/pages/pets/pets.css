@@ -662,11 +662,13 @@ header {
           align-items: center;
   margin-left: 40px;
   width: 1200px;
+  height: 930px;
 }
 
 @media screen and (max-width: 1279px) and (min-width: 768px) {
   .slider-wrapper {
     width: 708px;
+    height: 1400px;
     margin: 0 auto;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -685,6 +687,7 @@ header {
         -ms-flex-pack: center;
             justify-content: center;
     width: 300px;
+    height: 1400px;
   }
 }
 
