@@ -100,7 +100,7 @@ window.addEventListener('mouseup', function (event) {
 
 //  === SLIDER  ===
 
-const petsJSON = './pets.json';
+const petsJSON = '../assets/files/pets.json';
 
 
 
