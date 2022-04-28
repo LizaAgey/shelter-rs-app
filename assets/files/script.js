@@ -103,7 +103,6 @@ window.addEventListener('mouseup', function (event) {
 const petsJSON = './assets/files/pets.json';
 
 
-
 async function getPetsFromFile() {
     return await fetch(petsJSON)
         .then(response => response.json())
@@ -260,3 +259,8 @@ async function slide(items, prev, next) {
 }
 
 slide(sliderItems, BTN_LEFT, BTN_RIGHT)
+
+// === / SLIDER ===
+
+
+
