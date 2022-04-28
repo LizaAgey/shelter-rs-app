@@ -100,7 +100,7 @@ window.addEventListener('mouseup', function (event) {
 
 //  === SLIDER  ===
 
-const petsJSON = './shelter-rs-app/assets/files/pets.json';
+const petsJSON = './assets/files/pets.json';
 
 
 
