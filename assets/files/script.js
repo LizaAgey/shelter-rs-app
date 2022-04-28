@@ -98,60 +98,63 @@ window.addEventListener('mouseup', function (event) {
 
 //  === / BURGER MENU ===
 
+//  === SLIDER  ===
 
 const petsJSON = '../../assets/files/pets.json';
 
- fetch(petsJSON)
-    .then(response => response.json())
-    .then(data => {
-        console.log(data)
+async function getPetsFromFile() {
+    return await fetch(petsJSON)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
 
-        let arrIDs = []
-        for (let i = 0; i < data.length; i++) {
-            arrIDs.push(i);
-        }
-        console.log(arrIDs)
+            let arrIDs = []
+            for (let i = 0; i < data.length; i++) {
+                arrIDs.push(i);
+            }
+            console.log(arrIDs)
 
-        let sortedArrIDs = arrIDs.sort(randomNumber);
-        function randomNumber(a, b) {
-            return 0.5 - Math.random();
-        }
-        console.log(sortedArrIDs)
+            let sortedArrIDs = arrIDs.sort(randomNumber);
+            function randomNumber(a, b) {
+                return 0.5 - Math.random();
+            }
+            console.log(sortedArrIDs)
 
-        sortedArrIDs.forEach((id) => {
+            sortedArrIDs.forEach((id) => {
 
-            let slidesDiv = document.getElementById("slides")
-            let petItem = document.createElement("div");
-            petItem.classList.add("pet-wrapper")
-            petItem.classList.add("pet-wrapper__item")
+                let slidesDiv = document.getElementById("slides")
+                let petItem = document.createElement("div");
+                petItem.classList.add("pet-wrapper")
+                petItem.classList.add("pet-wrapper__item")
 
-            petItem.innerHTML =
-                `<img src="${data[id].img}" alt="${data[id].name}">
+                petItem.innerHTML =
+                    `<img src="${data[id].img}" alt="${data[id].name}">
               <div class="pet-name">${data[id].name}</div>
               <button class="button-secondary">Learn more</button>`
 
-            slidesDiv.append(petItem)
+                slidesDiv.append(petItem)
+            })
+
         })
-
-    })
-    
+}
 
 
-const slider = document.getElementById('slider')
+
+const slider = document.querySelector('.slider')
 const sliderItems = document.getElementById('slides')
 
 const BTN_LEFT = document.getElementById("prev");
 const BTN_RIGHT = document.getElementById("next");
 
 
-
-function slide(wrapper, items, prev, next) {
+async function slide(items, prev, next) {
+    await getPetsFromFile();
 
     let posX1 = 0
     let posX2 = 0
     let posInitial
     let posFinal
-    let threshold = 100
+    let threshold = 20
     let slides = document.getElementsByClassName('pet-wrapper')
     let slidesLength = slides.length
     let slideSize = 270
@@ -165,8 +168,6 @@ function slide(wrapper, items, prev, next) {
 
     items.appendChild(cloneFirst);
     items.insertBefore(cloneLast, firstSlide);
-
-    wrapper.classList.add('loaded');
 
     items.onmousedown = dragStart;
 
@@ -256,4 +257,4 @@ function slide(wrapper, items, prev, next) {
     }
 }
 
-slide(slider, sliderItems, BTN_LEFT, BTN_RIGHT)
+slide(sliderItems, BTN_LEFT, BTN_RIGHT)

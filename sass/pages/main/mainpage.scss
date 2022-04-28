@@ -483,6 +483,8 @@ header {
     flex-direction: column;
     align-items: center;
     margin-bottom: $base * 15;
+    margin-left: 1000px;
+    margin-top: 300px;
     transform: translate(-50%, -50%);
 
     @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
@@ -625,6 +627,8 @@ header {
 .next:active {
     transform: scale(0.8);
 }
+
+
 
 #our-friends-section {
     .button-primary {
