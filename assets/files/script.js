@@ -262,5 +262,22 @@ slide(sliderItems, BTN_LEFT, BTN_RIGHT)
 
 // === / SLIDER ===
 
+// === MODAL Window ===
+const petsCards = document.querySelectorAll('.pet-wrapper__item')
+
+for (let i = 0; i < petsCards.length; ++i) {
+    petsCards[i].addEventListener('click', openModal);
+    console.log('hi')
+}
+
+function openModal() {
+    petsCards.classList.toggle('pet-wrapper__item--active-modal')
+
+    if (petsCards.classList.contains('pet-wrapper__item--active-modal')) {
+        hideScroll();
+    } else {
+        showScroll();
+    }
+}
 
 

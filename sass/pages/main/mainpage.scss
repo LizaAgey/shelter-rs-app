@@ -466,9 +466,10 @@ header {
         padding-bottom: 100px;
         height: 600px;
 
-            .middle-title {
-                margin-top: 300px;
-            }
+        .middle-title {
+            margin-top: 300px;
+        }
+
         @media screen and (max-width: $middle-screen-max) and (min-width:$middle-screen-min) {
             height: 600px;
 
@@ -485,7 +486,7 @@ header {
             .middle-title {
                 margin-top: 300px;
             }
-            
+
         }
 
     }
@@ -564,6 +565,22 @@ header {
         transition: all 1s;
         position: relative;
 
+        &::before {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            display: none;
+            width: 100vw;
+            height: 100vh;
+            content: "";
+            background-color: rgba(41, 41, 41, 0.6);
+        }
+
+        &--active-modal {
+            &::before {
+                display: block;
+            }
+        }
 
         &+& {
             margin-left: $base * 22;
@@ -910,4 +927,111 @@ header {
 
 .donation-icon {
     padding-left: 15px;
+}
+
+
+// === MODAL WINDOW ===
+.modal-wrapper {
+
+    display: flex;
+    width: 700px;
+    height: auto;
+    background-color: $color-light-s;
+    border-radius: 5%;
+    margin: 0 auto;
+
+
+    .modal-img {
+        
+        img {
+            width: 350px;
+            border-radius: 5%;
+        }
+    }
+
+    @media screen and (max-width: $middle-screen-max) and (min-width:$middle-screen-min) {
+        width: 700px;
+    }
+
+    @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
+        width: 300px;
+
+        .modal-img {
+            display: none;
+            
+        }
+    }
+
+
+}
+
+.modal-content {
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.modal-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 260px;
+    margin-left: 30px;
+    @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
+        margin: 0 auto;
+        align-items: center;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    ul li::before {
+        content: "\2022";
+        color: $color-primary;
+        font-weight: bold;
+        display: inline-block;
+        width: 1em;
+        margin-left: -2em;
+    }
+}
+
+.modal-name {
+    @include h3;
+}
+
+.modal-type,
+.modal-list {
+    @include h4;
+    margin: 20px 0 20px 0;
+}
+
+.modal-list {
+    @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
+        align-self: flex-start;
+    }
+}
+
+.modal-des {
+    @include h5;
+    @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
+        text-align:justify;
+    }
+
+}
+
+.modal-close {
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid $color-primary;
+    width: 50px;
+    height: 50px;
+    .close-icon {
+       margin: 13px 21px ;
+    }
+
+    margin-left: 700px;
+    @media screen and (max-width: $small-screen-max) and (min-width:$small-screen-min) {
+        margin-left: 200px;
+    }
 }
