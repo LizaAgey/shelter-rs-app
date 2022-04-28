@@ -338,7 +338,7 @@ async function pagination() {
             getPetsForPagination()
         }
 
-        if ((screen.width > 1280) && (middleNum <= 5)) {
+        if ((screen.width >= 1280) && (middleNum <= 5)) {
             addNewCards ()
             disableRightEnd()
             disableRight()
@@ -346,7 +346,7 @@ async function pagination() {
             enableLeftEnd ()
             pagMiddle.innerText = 6
             return
-        } else if(screen.width <= 1280 && screen.width > 768 && middleNum <= 7) {
+        } else if(screen.width < 1280 && screen.width > 768 && middleNum <= 7) {
             addNewCards ()
             disableRightEnd()
             disableRight()
