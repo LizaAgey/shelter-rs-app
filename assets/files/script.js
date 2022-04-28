@@ -102,6 +102,8 @@ window.addEventListener('mouseup', function (event) {
 
 const petsJSON = '../assets/files/pets.json';
 
+
+
 async function getPetsFromFile() {
     return await fetch(petsJSON)
         .then(response => response.json())
